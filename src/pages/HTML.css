@@ -1,0 +1,377 @@
+.html-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.html-main {
+  flex: 1;
+}
+
+/* Hero Section */
+.html-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* Three Column Section */
+.three-column-section {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.three-column-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 30px;
+  min-height: 600px;
+}
+
+/* Left Column - Topics */
+.topics-column {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.topics-column h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 12px;
+}
+
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topic-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+  text-align: left;
+}
+
+.topic-item:hover {
+  background: #e8eaf6;
+  border-color: #667eea;
+  transform: translateX(5px);
+}
+
+.topic-item.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.topic-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(102, 126, 234, 0.2);
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.topic-item.active .topic-number {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.topic-name {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Center Column - Code & Theory */
+.code-theory-column {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: auto;
+  max-height: 800px;
+}
+
+.theory-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theory-section h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+}
+
+.theory-section p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.code-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-header h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 8px;
+  flex: 1;
+}
+
+.run-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.run-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.run-button:active {
+  transform: translateY(0);
+}
+
+.code-editor {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 250px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.code-editor:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Right Column - Output */
+.output-column {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.output-column h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 12px;
+}
+
+.output-display {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.output-iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .three-column-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .topics-column {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .code-theory-column {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .output-column {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .three-column-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .topics-column,
+  .code-theory-column,
+  .output-column {
+    grid-column: 1;
+    position: static;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .code-theory-column {
+    max-height: none;
+  }
+
+  .output-display {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .html-hero {
+    padding: 50px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .three-column-section {
+    padding: 40px 15px;
+  }
+
+  .topics-column,
+  .code-theory-column,
+  .output-column {
+    padding: 15px;
+  }
+
+  .topic-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .code-section pre {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+
+  .output-display {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
