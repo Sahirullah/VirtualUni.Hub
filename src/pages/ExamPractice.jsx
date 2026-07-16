@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
-import { examPracticeData } from '../data/examPracticeData';
+import { examPracticeData, getQuestionSet } from '../data/examPracticeData';
 import './ExamPractice.css';
 
 const ExamPractice = () => {
@@ -15,6 +15,9 @@ const ExamPractice = () => {
   const [timeLeft, setTimeLeft] = useState(null);
   const [answers, setAnswers] = useState({});
   const [flagged, setFlagged] = useState(new Set());
+  const [attemptNumber, setAttemptNumber] = useState(0);
+  const [currentQuestionSet, setCurrentQuestionSet] = useState([]);
+  const [examAttempts, setExamAttempts] = useState({});
 
   const quizzes = examPracticeData;
 
@@ -23,10 +26,10 @@ const ExamPractice = () => {
     : quizzes.filter((quiz) => quiz.difficulty.toLowerCase() === selectedCategory.toLowerCase());
 
   useEffect(() => {
-    if (selectedQuiz && !showScore) {
-      setTimeLeft(selectedQuiz.questions.length * 90);
+    if (selectedQuiz && !showScore && currentQuestionSet.length > 0) {
+      setTimeLeft(currentQuestionSet.length * 90);
     }
-  }, [selectedQuiz, showScore]);
+  }, [selectedQuiz, showScore, currentQuestionSet]);
 
   useEffect(() => {
     if (timeLeft === null || showScore) return;
@@ -51,28 +54,64 @@ const ExamPractice = () => {
   };
 
   const handleExamStart = (exam) => {
+    const currentAttempt = (examAttempts[exam.id] || 0);
+    const questionSet = getQuestionSet(exam.questions, currentAttempt);
+    
     setSelectedQuiz(exam);
+    setCurrentQuestionSet(questionSet);
     setCurrentQuestion(0);
     setScore(0);
     setShowScore(false);
     setAnswers({});
     setFlagged(new Set());
+    
+    // Track attempt for this exam
+    setExamAttempts({
+      ...examAttempts,
+      [exam.id]: currentAttempt + 1,
+    });
   };
+
+  const handleQuizStart = handleExamStart;
 
   const handleAnswerClick = (index) => {
     const newAnswers = { ...answers, [currentQuestion]: index };
     setAnswers(newAnswers);
 
-    if (index === selectedQuiz.questions[currentQuestion].correct) {
+    if (index === currentQuestionSet[currentQuestion].correct) {
       setScore(score + 1);
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < selectedQuiz.questions.length) {
+    if (nextQuestion < currentQuestionSet.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
     }
+  };
+
+  const toggleFlag = () => {
+    const newFlagged = new Set(flagged);
+    if (newFlagged.has(currentQuestion)) {
+      newFlagged.delete(currentQuestion);
+    } else {
+      newFlagged.add(currentQuestion);
+    }
+    setFlagged(newFlagged);
+  };
+
+  const goToQuestion = (index) => {
+    setCurrentQuestion(index);
+  };
+
+  const resetExam = () => {
+    setSelectedQuiz(null);
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+    setAnswers({});
+    setFlagged(new Set());
+    setCurrentQuestionSet([]);
   };
 
   const handleFinishExam = () => {
@@ -88,7 +127,7 @@ const ExamPractice = () => {
   };
 
   const handleLastQuestion = () => {
-    setCurrentQuestion(selectedQuiz.questions.length - 1);
+    setCurrentQuestion(currentQuestionSet.length - 1);
   };
 
   const handlePreviousQuestion = () => {
@@ -98,32 +137,9 @@ const ExamPractice = () => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion < selectedQuiz.questions.length - 1) {
+    if (currentQuestion < currentQuestionSet.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
-  };
-
-  const resetExam = () => {
-    setSelectedQuiz(null);
-    setCurrentQuestion(0);
-    setScore(0);
-    setShowScore(false);
-    setAnswers({});
-    setFlagged(new Set());
-  };
-
-  const toggleFlag = () => {
-    const newFlagged = new Set(flagged);
-    if (newFlagged.has(currentQuestion)) {
-      newFlagged.delete(currentQuestion);
-    } else {
-      newFlagged.add(currentQuestion);
-    }
-    setFlagged(newFlagged);
-  };
-
-  const goToQuestion = (index) => {
-    setCurrentQuestion(index);
   };
 
   return (
@@ -166,14 +182,17 @@ const ExamPractice = () => {
 
           <div className="exam-container">
             <div className="exam-selection">
-              <div className="quizzes-grid">
+              <div className="exams-grid">
                 {filteredQuizzes.map((exam) => (
-                  <div key={exam.id} className="quiz-card">
-                    <div className="quiz-icon">{exam.icon}</div>
+                  <div key={exam.id} className="exam-card">
+                    <div className="exam-icon">{exam.icon}</div>
                     <h2>{exam.title}</h2>
-                    <div className="quiz-meta">
+                    <div className="exam-meta">
                       <span className="difficulty">{exam.difficulty}</span>
-                      <span className="questions-count">{exam.questions.length} Questions</span>
+                      <span className="questions-count">{exam.totalQuestions || 100} Questions</span>
+                    </div>
+                    <div className="exam-info-small">
+                      <span className="attempt-count">Attempts: {examAttempts[exam.id] || 0}</span>
                     </div>
                     <button onClick={() => handleExamStart(exam)} className="start-btn">
                       Start Exam
@@ -186,8 +205,8 @@ const ExamPractice = () => {
         </>
       ) : (
         <div className="exam-page">
-          <div className="quiz-header-bar">
-            <div className="quiz-title">{selectedQuiz.title}</div>
+          <div className="exam-header-bar">
+            <div className="exam-title">{selectedQuiz.title}</div>
             <div className="timer-section">
               <div className="timer-circle">
                 <span className="timer-icon">⏱</span>
@@ -195,31 +214,32 @@ const ExamPractice = () => {
               </div>
             </div>
             <div className="user-section">
-              <span className="login-time">Login Time: {new Date().toLocaleTimeString()}</span>
+              <span className="login-time">Attempt: {examAttempts[selectedQuiz.id]}</span>
               <div className="user-icon">👤</div>
             </div>
           </div>
 
-          <div className="quiz-info-bar">
-            <span className="question-no">Question No: {currentQuestion + 1} of {selectedQuiz.questions.length}</span>
+          <div className="exam-info-bar">
+            <span className="question-no">Question No: {currentQuestion + 1} of {currentQuestionSet.length}</span>
             <div className="right-section">
-              <span className="marks">Marks: ({score}/{selectedQuiz.questions.length})</span>
+              <span className="marks">Marks: ({score}/{currentQuestionSet.length})</span>
               <button className="summary-btn">Summary</button>
             </div>
           </div>
 
           {showScore ? (
-            <div className="quiz-container">
+            <div className="exam-container">
               <div className="score-section">
                 <h2>Exam Completed!</h2>
                 <div className="score-display">
                   <p className="score-text">
                     You scored <span className="score-value">{score}</span> out of{' '}
-                    <span className="total-value">{selectedQuiz.questions.length}</span>
+                    <span className="total-value">{currentQuestionSet.length}</span>
                   </p>
                   <p className="percentage">
-                    {Math.round((score / selectedQuiz.questions.length) * 100)}%
+                    {Math.round((score / currentQuestionSet.length) * 100)}%
                   </p>
+                  <p className="attempt-info">Attempt #{examAttempts[selectedQuiz.id]}</p>
                 </div>
                 <button onClick={resetExam} className="restart-btn">
                   Try Another Exam
@@ -227,16 +247,16 @@ const ExamPractice = () => {
               </div>
             </div>
           ) : (
-            <div className="quiz-wrapper">
-              <div className="quiz-main">
+            <div className="exam-wrapper">
+              <div className="exam-main">
                 <div className="question-box">
-                  <h2 className="question">{selectedQuiz.questions[currentQuestion].question}</h2>
+                  <h2 className="question">{currentQuestionSet[currentQuestion]?.question}</h2>
                 </div>
 
                 <div className="answer-section">
                   <h3>Answer</h3>
                   <div className="options">
-                    {selectedQuiz.questions[currentQuestion].options.map((option, index) => (
+                    {currentQuestionSet[currentQuestion]?.options.map((option, index) => (
                       <label key={index} className="option-label">
                         <input
                           type="radio"
@@ -252,11 +272,11 @@ const ExamPractice = () => {
                 </div>
               </div>
 
-              <div className="quiz-sidebar">
+              <div className="exam-sidebar">
                 <div className="summary-panel">
                   <h4>Summary</h4>
                   <div className="question-grid">
-                    {selectedQuiz.questions.map((_, idx) => (
+                    {currentQuestionSet.map((_, idx) => (
                       <button
                         key={idx}
                         className={`question-btn ${idx === currentQuestion ? 'active' : ''} ${
@@ -280,7 +300,7 @@ const ExamPractice = () => {
                     </div>
                     <div className="stat-row">
                       <span>Total</span>
-                      <span>{selectedQuiz.questions.length}</span>
+                      <span>{currentQuestionSet.length}</span>
                     </div>
                   </div>
                 </div>
@@ -288,7 +308,7 @@ const ExamPractice = () => {
             </div>
           )}
 
-          <div className="quiz-footer">
+          <div className="exam-footer">
             <button className="finish-btn" onClick={handleFinishExam}>Finish Exam</button>
             <button className="flag-btn" onClick={toggleFlag}>
               {flagged.has(currentQuestion) ? '🚩 Flagged' : '🚩 Flag'}
@@ -310,7 +330,7 @@ const ExamPractice = () => {
             <button 
               className="next-btn" 
               onClick={handleNextQuestion}
-              disabled={currentQuestion === selectedQuiz.questions.length - 1}
+              disabled={currentQuestion === currentQuestionSet.length - 1}
             >
               Next
             </button>

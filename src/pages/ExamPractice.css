@@ -154,6 +154,30 @@
   flex-wrap: wrap;
 }
 
+.exam-info-small,
+.quiz-info-small {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.attempt-count {
+  color: #e53e3e;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.attempt-info {
+  color: #666;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.exam-practice-page.dark-mode .attempt-info {
+  color: #aaa;
+}
+
 .difficulty {
   background: rgba(229, 62, 62, 0.1);
   color: #e53e3e;
