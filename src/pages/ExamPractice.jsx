@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
 import './ExamPractice.css';
 
@@ -123,6 +125,7 @@ const ExamPractice = () => {
 
   return (
     <div className={`exam-practice-page ${isDarkMode ? 'dark-mode' : ''}`}>
+      <Header />
       <div className="exam-header">
         <h1>Exam Practice</h1>
         <p>Test your knowledge with our practice quizzes</p>
@@ -199,6 +202,7 @@ const ExamPractice = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
 import './ImportantSoftwares.css';
 
@@ -74,6 +76,7 @@ const ImportantSoftwares = () => {
 
   return (
     <div className={`softwares-page ${isDarkMode ? 'dark-mode' : ''}`}>
+      <Header />
       <div className="softwares-header">
         <h1>Important Softwares</h1>
         <p>Essential tools and applications for learning and development</p>
@@ -94,6 +97,7 @@ const ImportantSoftwares = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
