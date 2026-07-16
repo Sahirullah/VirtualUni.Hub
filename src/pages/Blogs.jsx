@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
 import './Blogs.css';
 
@@ -64,6 +67,7 @@ const Blogs = () => {
 
   return (
     <div className={`blogs-page ${isDarkMode ? 'dark-mode' : ''}`}>
+      <Header />
       <div className="blogs-header">
         <h1>Educational Blogs</h1>
         <p>Insights, tips, and guides to enhance your learning journey</p>
@@ -88,6 +92,7 @@ const Blogs = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
