@@ -362,6 +362,10 @@ html {
   gap: 20px;
 }
 
+.vu-menu-toggle {
+  display: none;
+}
+
 .vu-nav-links {
   display: flex;
   list-style: none;
@@ -400,11 +404,22 @@ html {
   border-right: none;
 }
 
+/* Hide toggle button on desktop */
+.vu-menu-toggle {
+  display: none;
+}
+
 /* Remove bullet points/list markers */
 .category-links li::before,
 .vu-nav-links li::before,
-.vu-menu-toggle::before {
+.vu-menu-toggle::before,
+.vu-nav-container::before,
+.vu-nav-container::after {
   content: none !important;
+  display: none !important;
+}
+
+.vu-nav::before {
   display: none !important;
 }
 
@@ -421,6 +436,7 @@ html {
     transition: background-color 0.3s ease;
     order: 2;
     margin: 0;
+    margin-left: auto;
   }
 
   .vu-menu-toggle:hover {
@@ -458,7 +474,7 @@ html {
   .vu-nav-container {
     padding: 0 15px;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     min-height: 50px;
     position: relative;
@@ -483,8 +499,8 @@ html {
   }
 
   .vu-nav-links.vu-open {
-    max-height: none;
-    overflow-y: visible;
+    max-height: 500px;
+    overflow-y: auto;
   }
 
   .vu-nav-links li {

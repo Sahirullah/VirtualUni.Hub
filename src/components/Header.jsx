@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoImage from '../assets/logo (3).png';
 import { useTheme } from '../context/ThemeContext';
@@ -121,6 +121,19 @@ const Header = () => {
       {/* Virtual University Navigation */}
       <div className="vu-nav">
         <div className="vu-nav-container">
+          <ul className={`vu-nav-links ${isVUMenuOpen ? 'vu-open' : ''}`}>
+            <li><Link to="/vu-handout" onClick={() => setIsVUMenuOpen(false)}>Handouts</Link></li>
+            <li><Link to="/notes" onClick={() => setIsVUMenuOpen(false)}>Highlighted Handout</Link></li>
+            <li><Link to="/midterm" onClick={() => setIsVUMenuOpen(false)}>Midterm</Link></li>
+            <li><Link to="/final-term" onClick={() => setIsVUMenuOpen(false)}>Finalterm</Link></li>
+            <li><Link to="/quizzes" onClick={() => setIsVUMenuOpen(false)}>Quizzes</Link></li>
+            <li><Link to="/assignment" onClick={() => setIsVUMenuOpen(false)}>Assignments</Link></li>
+            <li><a href="#gdbs" onClick={() => setIsVUMenuOpen(false)}>GDBs</a></li>
+            <li><Link to="/midterm-reviews" onClick={() => setIsVUMenuOpen(false)}>Exam Reviews</Link></li>
+            <li><Link to="/blogs" onClick={() => setIsVUMenuOpen(false)}>Blogs</Link></li>
+            <li><Link to="/softwares" onClick={() => setIsVUMenuOpen(false)}>VIP Softwares</Link></li>
+            <li><Link to="/exam-practice" onClick={() => setIsVUMenuOpen(false)}>Exam Practice</Link></li>
+          </ul>
           <button 
             className={`vu-menu-toggle ${isVUMenuOpen ? 'active' : ''}`}
             onClick={toggleVUMenu}
@@ -130,16 +143,6 @@ const Header = () => {
             <span></span>
             <span></span>
           </button>
-          <ul className={`vu-nav-links ${isVUMenuOpen ? 'vu-open' : ''}`}>
-            <li><Link to="/vu-handout" onClick={() => setIsVUMenuOpen(false)}>Handouts</Link></li>
-            <li><Link to="/midterm" onClick={() => setIsVUMenuOpen(false)}>Midterm</Link></li>
-            <li><Link to="/final-term" onClick={() => setIsVUMenuOpen(false)}>Final Term</Link></li>
-            <li><Link to="/quizzes" onClick={() => setIsVUMenuOpen(false)}>Quizzes</Link></li>
-            <li><Link to="/assignment" onClick={() => setIsVUMenuOpen(false)}>Assignments</Link></li>
-            <li><a href="#gdbs" onClick={() => setIsVUMenuOpen(false)}>GDBs</a></li>
-            <li><Link to="/midterm-reviews" onClick={() => setIsVUMenuOpen(false)}>Midterm Reviews</Link></li>
-            <li><Link to="/final-term-reviews" onClick={() => setIsVUMenuOpen(false)}>Final Reviews</Link></li>
-          </ul>
         </div>
       </div>
     </header>
