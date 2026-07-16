@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useTheme } from '../context/ThemeContext';
+import { examPracticeData } from '../data/examPracticeData';
 import './ExamPractice.css';
 
 const ExamPractice = () => {
@@ -10,91 +11,13 @@ const ExamPractice = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState('all');
 
-  const quizzes = [
-    {
-      id: 1,
-      title: 'Mathematics Basics',
-      difficulty: 'Easy',
-      icon: '🔢',
-      questions: [
-        {
-          question: 'What is 15 × 4?',
-          options: ['45', '50', '60', '75'],
-          correct: 2,
-        },
-        {
-          question: 'What is the square root of 144?',
-          options: ['10', '12', '14', '16'],
-          correct: 1,
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: 'English Grammar',
-      difficulty: 'Medium',
-      icon: '📚',
-      questions: [
-        {
-          question: 'Choose the correct sentence:',
-          options: [
-            'She go to school every day',
-            'She goes to school every day',
-            'She going to school every day',
-            'She gone to school every day',
-          ],
-          correct: 1,
-        },
-        {
-          question: 'What is the past tense of "eat"?',
-          options: ['eated', 'ate', 'eaten', 'eatted'],
-          correct: 1,
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: 'Science Concepts',
-      difficulty: 'Hard',
-      icon: '🔬',
-      questions: [
-        {
-          question: 'What is the chemical symbol for Gold?',
-          options: ['Go', 'Gd', 'Au', 'Ag'],
-          correct: 2,
-        },
-        {
-          question: 'How many bones does an adult human have?',
-          options: ['186', '196', '206', '216'],
-          correct: 2,
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: 'Computer Basics',
-      difficulty: 'Easy',
-      icon: '💻',
-      questions: [
-        {
-          question: 'What does HTML stand for?',
-          options: [
-            'Hyper Text Markup Language',
-            'High Tech Modern Language',
-            'Home Tool Markup Language',
-            'Hyperlinks and Text Markup Language',
-          ],
-          correct: 0,
-        },
-        {
-          question: 'Which of these is a programming language?',
-          options: ['HTML', 'CSS', 'Python', 'XML'],
-          correct: 2,
-        },
-      ],
-    },
-  ];
+  const quizzes = examPracticeData;
+
+  const filteredQuizzes = selectedFilter === 'all' 
+    ? quizzes 
+    : quizzes.filter(quiz => quiz.difficulty.toLowerCase() === selectedFilter.toLowerCase());
 
   const handleQuizStart = (quiz) => {
     setSelectedQuiz(quiz);
@@ -129,13 +52,40 @@ const ExamPractice = () => {
       <div className="exam-header">
         <h1>Exam Practice</h1>
         <p>Test your knowledge with our practice quizzes</p>
+        
+        <div className="filter-buttons">
+          <button 
+            className={`filter-btn ${selectedFilter === 'all' ? 'active' : ''}`}
+            onClick={() => setSelectedFilter('all')}
+          >
+            All Subjects
+          </button>
+          <button 
+            className={`filter-btn ${selectedFilter === 'easy' ? 'active' : ''}`}
+            onClick={() => setSelectedFilter('easy')}
+          >
+            Easy
+          </button>
+          <button 
+            className={`filter-btn ${selectedFilter === 'medium' ? 'active' : ''}`}
+            onClick={() => setSelectedFilter('medium')}
+          >
+            Medium
+          </button>
+          <button 
+            className={`filter-btn ${selectedFilter === 'hard' ? 'active' : ''}`}
+            onClick={() => setSelectedFilter('hard')}
+          >
+            Hard
+          </button>
+        </div>
       </div>
 
       <div className="exam-container">
         {!selectedQuiz ? (
           <div className="quiz-selection">
             <div className="quizzes-grid">
-              {quizzes.map((quiz) => (
+              {filteredQuizzes.map((quiz) => (
                 <div key={quiz.id} className="quiz-card">
                   <div className="quiz-icon">{quiz.icon}</div>
                   <h2>{quiz.title}</h2>
