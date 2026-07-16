@@ -241,9 +241,9 @@
   justify-content: space-between;
   align-items: center;
   background: #f8f9fa;
-  padding: 15px 20px;
+  padding: 12px 15px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -255,7 +255,7 @@
 
 .exam-title,
 .quiz-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #333;
 }
@@ -276,8 +276,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
   border-radius: 50%;
   color: white;
@@ -285,24 +285,24 @@
 }
 
 .timer-icon {
-  font-size: 24px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  margin-bottom: 3px;
 }
 
 .timer-value {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .user-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .login-time {
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .exam-practice-page.dark-mode .login-time {
@@ -310,7 +310,7 @@
 }
 
 .user-icon {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 /* Exam Info Bar */
@@ -320,9 +320,9 @@
   justify-content: space-between;
   align-items: center;
   background: #f0f0f0;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .exam-practice-page.dark-mode .exam-info-bar,
@@ -332,7 +332,7 @@
 
 .question-no {
   color: #333;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -343,12 +343,12 @@
 .right-section {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .marks {
   color: #666;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -377,9 +377,9 @@
 .exam-wrapper,
 .quiz-wrapper {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex: 1;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .exam-main,
@@ -387,8 +387,10 @@
   flex: 1;
   background: #f8f9fa;
   border-radius: 8px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .exam-practice-page.dark-mode .exam-main,
@@ -398,25 +400,32 @@
 }
 
 .question-box {
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .question {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: #333;
   margin: 0;
+  line-height: 1.4;
 }
 
 .exam-practice-page.dark-mode .question {
   color: #ecf0f1;
 }
 
+.answer-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .answer-section h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin: 0 0 10px 0;
 }
 
 .exam-practice-page.dark-mode .answer-section h3 {
@@ -426,7 +435,8 @@
 .options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  flex: 1;
 }
 
 .option-label {
@@ -434,10 +444,11 @@
   align-items: center;
   background: white;
   border: 2px solid #e0e0e0;
-  padding: 15px;
+  padding: 10px 12px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: auto;
 }
 
 .exam-practice-page.dark-mode .option-label {
@@ -477,9 +488,9 @@
   width: 280px;
   background: #f8f9fa;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-height: 600px;
+  max-height: 500px;
   overflow-y: auto;
 }
 
@@ -490,10 +501,10 @@
 }
 
 .summary-panel h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin: 0 0 12px 0;
 }
 
 .exam-practice-page.dark-mode .summary-panel h4 {
@@ -503,8 +514,8 @@
 .question-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .question-btn {
@@ -550,7 +561,7 @@
 
 .stats {
   border-top: 2px solid #e0e0e0;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .exam-practice-page.dark-mode .stats {
@@ -560,8 +571,8 @@
 .stat-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
-  font-size: 13px;
+  margin-bottom: 8px;
+  font-size: 12px;
 }
 
 .stat-row span:first-child {
