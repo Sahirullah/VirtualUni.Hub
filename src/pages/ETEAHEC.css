@@ -1,0 +1,135 @@
+.etea-hec-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color, #f5f5f5);
+}
+
+.etea-hec-main {
+  flex: 1;
+}
+
+.etea-hec-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.etea-hec-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.etea-hec-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.etea-hec-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.etea-hec-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Download Section */
+.etea-hec-content {
+  padding: 80px 20px;
+  background-color: var(--bg-color, #f5f5f5);
+}
+
+.download-section {
+  text-align: center;
+  background: white;
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.download-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.download-section p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.download-btn-main {
+  padding: 16px 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.download-btn-main:active {
+  transform: translateY(-1px);
+}
+
+/* Dark Mode Support */
+:root[data-theme="dark"] .etea-hec-page {
+  background-color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .download-section {
+  background-color: #2a2a2a;
+}
+
+:root[data-theme="dark"] .download-section h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .download-section p {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .etea-hec-hero-title {
+    font-size: 2rem;
+  }
+
+  .etea-hec-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .etea-hec-content {
+    padding: 40px 20px;
+  }
+
+  .download-section {
+    padding: 40px 20px;
+  }
+
+  .download-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .download-btn-main {
+    padding: 14px 40px;
+    font-size: 1rem;
+  }
+}

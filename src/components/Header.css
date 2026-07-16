@@ -1,0 +1,1204 @@
+.header {
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Top Bar */
+.top-bar {
+  background: #f8f9fa;
+  padding: 12px 0;
+}
+
+.top-bar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: rgba(255, 116, 31, 0.1);
+  border: 2px solid #FF741F;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background: #FF741F;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 116, 31, 0.3);
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(180deg);
+}
+
+.theme-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  font-size: 20px;
+  color: #FF741F;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+}
+
+.contact-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Main Navigation */
+.main-nav {
+  background: #FF741F;
+  padding: 0;
+  width: 70%;
+  margin-left: 0;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 70px) 0, 100% 100%, 0 100%);
+}
+
+/* Category Navigation */
+.category-nav {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.category-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.category-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.category-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.category-menu-toggle:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.category-menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: white;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.category-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  flex: 1;
+}
+
+.category-links li {
+  position: relative;
+}
+
+.category-links a {
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.category-links a:hover,
+.category-links a:focus {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f7fafc;
+  outline: none;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(135deg, #c53030 0%, #9c2a2a 100%);
+  min-width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 0 0 5px 5px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  padding: 12px 20px;
+  border-right: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Nested Dropdown Styles - Consistent across all screens */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu {
+  position: absolute;
+  right: -280px;
+  top: 0;
+  background: linear-gradient(135deg, #3d4852 0%, #2d3748 100%);
+  min-width: 280px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: none !important;
+}
+
+.dropdown-submenu:hover .submenu {
+  display: none !important;
+}
+
+.submenu a {
+  padding: 10px 15px;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.submenu a:last-child {
+  border-bottom: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.submenu a:hover {
+  background: #FF741F;
+  color: white;
+}
+
+/* Prevent submenu from going off-screen */
+.category-links li:nth-last-child(-n+2) .submenu {
+  right: auto;
+  left: -280px;
+}
+
+.nav-container {
+  max-width: none;
+  margin: 0;
+  padding: 0 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  display: block;
+  padding: 20px 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-toggle:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .top-bar-container,
+  .nav-container,
+  .category-container {
+    padding: 0 20px;
+  }
+
+  .contact-info {
+    gap: 20px;
+  }
+
+  .contact-item {
+    gap: 8px;
+  }
+
+  .contact-value {
+    font-size: 13px;
+  }
+
+  .category-links a {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .logo-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  /* Improve dropdown positioning on tablets */
+  .dropdown-menu {
+    min-width: 180px;
+  }
+
+  .submenu {
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 10px 0;
+  }
+
+  .top-bar-container,
+  .nav-container,
+  .category-container {
+    padding: 0 15px;
+  }
+
+  .logo-section {
+    gap: 10px;
+  }
+
+  .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .logo-subtitle {
+    font-size: 10px;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .theme-icon {
+    font-size: 18px;
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .main-nav {
+    width: 100%;
+    clip-path: none;
+    position: relative;
+  }
+
+  .nav-container {
+    height: 60px;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #FF741F;
+    flex-direction: column;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .nav-open .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* Animate hamburger menu */
+  .nav-open .mobile-menu-toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .nav-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-open .mobile-menu-toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .category-menu-toggle {
+    display: flex;
+  }
+
+  /* Animate category hamburger menu */
+  .category-menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 4px);
+  }
+
+  .category-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .category-menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-3px, -4px);
+  }
+
+  .category-nav {
+    overflow: visible;
+  }
+
+  .category-container {
+    padding: 0 15px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 50px;
+    position: relative;
+  }
+
+  .category-menu-toggle {
+    order: 2;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .category-links {
+    order: 1;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #FF741F;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .category-links.category-open {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .category-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .category-links li:last-child {
+    border-bottom: none;
+  }
+
+  .category-links a {
+    padding: 20px 20px;
+    font-size: 16px;
+    white-space: normal;
+    border-right: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  .category-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Show dropdown arrows on mobile */
+  .dropdown-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate arrow when dropdown is open */
+  .dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Add overlay when dropdown is open - covers remaining space */
+  .dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile dropdown functionality - desktop-like side-by-side layout */
+  .dropdown-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #c53030 0%, #9c2a2a 100%);
+    transition: left 0.3s ease;
+    z-index: 1002;
+    padding-top: 60px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .dropdown-menu.mobile-open {
+    left: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 20px 30px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a.active,
+  .dropdown-submenu.active > a {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Highlight active submenu items on mobile */
+  .dropdown-submenu.active > a {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
+
+  /* Submenu appears to the right of dropdown on mobile */
+  .submenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 50%;
+    height: auto;
+    background: linear-gradient(135deg, #3d4852 0%, #2d3748 100%);
+    z-index: 1003;
+    padding-top: 60px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    overflow-y: visible;
+    overflow-x: hidden;
+    display: block;
+    max-height: none;
+  }
+
+  /* Show submenu when parent dropdown item is active or hovered */
+  .dropdown-submenu:hover .submenu,
+  .dropdown-submenu.active .submenu {
+    display: none !important;
+  }
+
+  /* Ensure all submenus are visible on mobile when their parent is active */
+  .dropdown-menu.mobile-open .dropdown-submenu.active .submenu {
+    display: none !important;
+  }
+
+  /* Mobile specific submenu behavior */
+  .dropdown-submenu.active .submenu {
+    display: none !important;
+  }
+  
+  /* Force first submenu to show when Virtual University opens */
+  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type.active .submenu {
+    display: none !important;
+  }
+
+  .submenu a {
+    padding: 18px 25px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 400;
+    display: block;
+    justify-content: flex-start;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  .submenu a:hover {
+    background: #FF741F;
+  }
+
+  /* Force submenu to show when dropdown is open on mobile */
+  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
+    display: none !important;
+  }
+
+  .submenu a:hover {
+    background: #FF741F;
+  }
+
+  /* Close button */
+  .dropdown-close {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    z-index: 1004;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+
+  .dropdown-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Close button for dropdown */
+  .dropdown-close {
+    display: block;
+  }
+
+  /* Remove the CSS pseudo-element close button */
+  .dropdown-menu::after {
+    display: none;
+  }
+
+  /* Remove category title */
+  .category-nav::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 8px 0;
+  }
+
+  .top-bar-container,
+  .nav-container,
+  .category-container {
+    padding: 0 10px;
+  }
+
+  .logo-section {
+    gap: 8px;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .logo-subtitle {
+    font-size: 9px;
+  }
+
+  .theme-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .theme-icon {
+    font-size: 16px;
+  }
+
+  .nav-container {
+    height: 50px;
+  }
+
+  .nav-links a {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .category-links a {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .dropdown-menu {
+    left: 5px;
+    right: 5px;
+    max-height: 50vh;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .submenu {
+    min-width: 160px;
+  }
+
+  .submenu a {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  /* Improve mobile menu button */
+  .mobile-menu-toggle {
+    padding: 8px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 22px;
+    height: 2px;
+  }
+
+  /* Better category navigation on small screens */
+  .category-nav::after {
+    width: 20px;
+  }
+
+  .category-menu-toggle span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .category-links a {
+    padding: 18px 15px;
+    font-size: 15px;
+  }
+
+  .dropdown-menu a {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+
+  .dropdown-menu {
+    width: 60%;
+  }
+
+  .submenu {
+    left: 60%;
+    width: 40%;
+  }
+
+  .submenu a {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  /* Keep dropdowns functional on small screens */
+  .dropdown-menu {
+    display: block;
+  }
+
+  /* Remove category title on very small screens */
+  .category-nav::before {
+    display: none;
+  }
+
+  /* Adjust dropdown positioning for small screens */
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    right: auto;
+    width: 200px;
+    max-width: calc(100vw - 20px);
+  }
+
+  /* Ensure submenu stays visible on small screens */
+  .submenu {
+    left: 100%;
+    width: 160px;
+    max-width: calc(100vw - 220px);
+  }
+
+  /* If submenu would go off-screen, position it to the left */
+  .dropdown:last-child .submenu,
+  .dropdown:nth-last-child(2) .submenu {
+    left: -160px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  .top-bar-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .header-right {
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logo-subtitle {
+    font-size: 8px;
+  }
+
+  .logo-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .category-links a {
+    padding: 16px 10px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu a {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .dropdown-menu {
+    width: 65%;
+  }
+
+  .submenu {
+    left: 65%;
+    width: 35%;
+  }
+
+  .dropdown-close {
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .submenu a {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  /* Keep dropdowns functional on extra small screens */
+  .dropdown-menu {
+    display: block;
+  }
+
+  .category-nav::before {
+    display: none;
+  }
+}
+
+/* Smooth scrolling for mobile category menu */
+@media (max-width: 768px) {
+  .category-links {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .category-links::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .category-links::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .category-links::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+
+  .category-links::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+/* Force first submenu to show immediately when dropdown opens on mobile */
+@media (max-width: 768px) {
+  /* Make sure all submenus are properly positioned and visible when active */
+  .dropdown-submenu.active .submenu {
+    display: none !important;
+  }
+  
+  /* Force first submenu to show when Virtual University dropdown opens */
+  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
+    display: none !important;
+  }
+  
+  /* Ensure submenu links are visible */
+  .dropdown-menu.mobile-open .dropdown-submenu .submenu a {
+    display: none !important;
+  }
+}
+/* Additional mobile submenu fixes */
+@media (max-width: 768px) {
+  /* Force submenu visibility when dropdown is open */
+  .dropdown-menu.mobile-open {
+    display: block !important;
+  }
+  
+  /* Ensure submenu container is always ready */
+  .dropdown-menu.mobile-open .dropdown-submenu {
+    position: relative !important;
+  }
+  
+  /* Make sure the first submenu shows immediately */
+  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
+    display: none !important;
+  }
+  
+  /* Override any transitions that might interfere */
+  .dropdown-menu.mobile-open .submenu {
+    display: none !important;
+  }
+  
+  /* Restore transitions after initial load */
+  .dropdown-menu.mobile-open .submenu.loaded {
+    display: none !important;
+  }
+}
+/* Custom scrollbar styling for mobile dropdowns */
+@media (max-width: 768px) {
+  /* Remove scrollbars completely - show all content */
+  .dropdown-menu::-webkit-scrollbar,
+  .submenu::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  .dropdown-menu,
+  .submenu {
+    scrollbar-width: none;
+  }
+
+  /* Remove all scrolling - show all content */
+  .dropdown-menu,
+  .submenu {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+  }
+
+  /* Ensure content doesn't cause horizontal overflow */
+  .dropdown-menu *,
+  .submenu * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* Responsive width adjustments for smaller mobile screens */
+@media (max-width: 480px) {
+  .dropdown-menu {
+    width: 55% !important;
+  }
+  
+  .submenu {
+    right: 0 !important;
+    left: auto !important;
+    width: 45% !important;
+  }
+  
+  .dropdown-submenu.active .submenu {
+    right: 0 !important;
+    left: auto !important;
+    width: 45% !important;
+  }
+  
+  .submenu a {
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+  }
+  
+  .dropdown-menu a {
+    padding: 18px 25px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .dropdown-menu {
+    width: 50% !important;
+  }
+  
+  .submenu {
+    right: 0 !important;
+    left: auto !important;
+    width: 50% !important;
+  }
+  
+  .dropdown-submenu.active .submenu {
+    right: 0 !important;
+    left: auto !important;
+    width: 50% !important;
+  }
+  
+  .submenu a {
+    padding: 14px 18px !important;
+    font-size: 14px !important;
+  }
+  
+  .dropdown-menu a {
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+  }
+}
