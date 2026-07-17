@@ -423,6 +423,77 @@ html {
   display: none !important;
 }
 
+/* VU Dropdown Styles */
+.vu-dropdown {
+  position: relative;
+}
+
+.vu-dropdown-toggle {
+  display: block;
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: capitalize;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vu-dropdown-toggle:hover,
+.vu-dropdown-toggle:focus {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f7fafc;
+  outline: none;
+}
+
+.vu-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(135deg, #d63230 0%, #a71f1f 100%);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 1001;
+}
+
+.vu-dropdown-menu.vu-dropdown-open {
+  max-height: 400px;
+}
+
+.vu-dropdown-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vu-dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.vu-dropdown-menu a {
+  display: block;
+  padding: 12px 25px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  border-right: none;
+}
+
+.vu-dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f7fafc;
+}
+
 /* Mobile responsiveness for VU Nav */
 @media (max-width: 768px) {
   .vu-menu-toggle {
@@ -527,6 +598,48 @@ html {
 
   .vu-nav-links a:hover {
     background: rgba(255, 255, 255, 0.15);
+  }
+
+  .vu-dropdown-toggle {
+    width: 100%;
+    padding: 20px 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+  }
+
+  .vu-dropdown-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 20px;
+    font-size: 10px;
+  }
+
+  .vu-dropdown-menu {
+    position: static;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .vu-dropdown-menu.vu-dropdown-open {
+    max-height: 500px;
+  }
+
+  .vu-dropdown-menu a {
+    padding: 15px 30px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .vu-dropdown-menu li:last-child a {
+    border-bottom: none;
   }
 }
 
