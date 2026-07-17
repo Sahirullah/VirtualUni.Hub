@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { examPracticeData, quizCategories, getQuestionSet } from '../data/examPracticeData';
@@ -11,13 +11,39 @@ const ExamPractice = () => {
   const [currentExam, setCurrentExam] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [savedAnswers, setSavedAnswers] = useState({});
   const [flaggedQuestions, setFlaggedQuestions] = useState(new Set());
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(1500); // 25 minutes in seconds
+  const [isSaved, setIsSaved] = useState(true);
 
   const filteredExams = selectedCategory === 'all'
     ? examPracticeData
-    : examPracticeData.filter(exam => exam.difficulty.toLowerCase() === selectedCategory);
+    : examPracticeData.filter(exam => exam.category === selectedCategory);
+
+  // Timer effect
+  useEffect(() => {
+    if (!currentExam || showScore) return;
+
+    const interval = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 0) {
+          setShowScore(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [currentExam, showScore]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
 
   const startExam = (exam) => {
     const questions = getQuestionSet(exam.questions);
@@ -27,8 +53,11 @@ const ExamPractice = () => {
     });
     setCurrentQuestionIndex(0);
     setAnswers({});
+    setSavedAnswers({});
     setFlaggedQuestions(new Set());
     setShowScore(false);
+    setTimeLeft(1500); // 25 minutes
+    setIsSaved(true);
   };
 
   const handleAnswerChange = (index) => {
@@ -36,26 +65,39 @@ const ExamPractice = () => {
       ...answers,
       [currentQuestionIndex]: index
     });
+    setIsSaved(false);
+  };
+
+  const handleSave = () => {
+    setSavedAnswers({
+      ...savedAnswers,
+      [currentQuestionIndex]: answers[currentQuestionIndex]
+    });
+    setIsSaved(true);
   };
 
   const handleNext = () => {
-    if (currentQuestionIndex < currentExam.questions.length - 1) {
+    if (isSaved && currentQuestionIndex < currentExam.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setIsSaved(true);
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setIsSaved(true);
     }
   };
 
   const handleFirst = () => {
     setCurrentQuestionIndex(0);
+    setIsSaved(true);
   };
 
   const handleLast = () => {
     setCurrentQuestionIndex(currentExam.questions.length - 1);
+    setIsSaved(true);
   };
 
   const handleFlag = () => {
@@ -70,12 +112,14 @@ const ExamPractice = () => {
 
   const handleQuestionClick = (index) => {
     setCurrentQuestionIndex(index);
+    setIsSaved(true);
   };
 
   const handleFinish = () => {
     let correctCount = 0;
     currentExam.questions.forEach((question, index) => {
-      if (answers[index] === question.correct) {
+      // Only count answers that were saved
+      if (savedAnswers[index] && answers[index] === question.correct) {
         correctCount++;
       }
     });
@@ -87,8 +131,11 @@ const ExamPractice = () => {
     setCurrentExam(null);
     setCurrentQuestionIndex(0);
     setAnswers({});
+    setSavedAnswers({});
     setFlaggedQuestions(new Set());
     setShowScore(false);
+    setTimeLeft(1500);
+    setIsSaved(true);
   };
 
   if (!currentExam) {
@@ -96,14 +143,17 @@ const ExamPractice = () => {
       <div className={`exam-practice-page ${isDarkMode ? 'dark-mode' : ''}`}>
         <Header />
         
-        <div className="exam-header">
-          <h1>Exam Practice</h1>
-          <p>Test your knowledge with our comprehensive exam practice tests. Choose your difficulty level and start learning.</p>
+        <div className="exam-hero">
+          <div className="hero-content">
+            <div className="hero-icon">📝</div>
+            <h1>EXAM PRACTICE</h1>
+            <p>Virtual University Complete Exam Practice Tests</p>
+          </div>
         </div>
 
         <div className="exam-container">
           <div className="category-filter">
-            <h2>Select Difficulty Level</h2>
+            <h2>Select Category</h2>
             <div className="filter-buttons">
               {quizCategories.map(cat => (
                 <button
@@ -118,25 +168,39 @@ const ExamPractice = () => {
           </div>
 
           <div className="exams-grid">
-            {filteredExams.map(exam => (
+            {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
               <div key={exam.id} className="exam-card">
-                <div className="exam-icon">{exam.icon}</div>
-                <h2>{exam.title}</h2>
-                <div className="exam-meta">
-                  <span className="difficulty">{exam.difficulty}</span>
+                <div className="card-header">
+                  <div className="card-icon">{exam.image}</div>
+                  <span className="status-badge">Exam Practice</span>
                 </div>
-                <div className="exam-info-small">
-                  <span className="questions-count">{exam.totalQuestions} Questions</span>
+                
+                <div className="card-body">
+                  <h3>{exam.code}</h3>
+                  <h4>{exam.title}</h4>
+                  <p>Take practice exam for {exam.title} with 50 randomly selected questions</p>
                 </div>
-                <button
-                  className="start-btn"
-                  onClick={() => startExam(exam)}
-                >
-                  Start Exam
-                </button>
+
+                <div className="card-footer">
+                  <div className="card-features">
+                    <span className="feature-tag">❓ 50 Questions</span>
+                  </div>
+                  <button
+                    className="start-exam-btn"
+                    onClick={() => startExam(exam)}
+                  >
+                    Start Exam
+                  </button>
+                </div>
               </div>
             ))}
           </div>
+
+          {filteredExams.length === 0 && (
+            <div className="no-results">
+              <p>No exams found in this category.</p>
+            </div>
+          )}
         </div>
 
         <Footer />
@@ -145,7 +209,8 @@ const ExamPractice = () => {
   }
 
   if (showScore) {
-    const percentage = Math.round((score / currentExam.questions.length) * 100);
+    const savedCount = Object.keys(savedAnswers).length;
+    const percentage = savedCount > 0 ? Math.round((score / savedCount) * 100) : 0;
 
     return (
       <div className={`exam-practice-page ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -165,7 +230,7 @@ const ExamPractice = () => {
               <div className="score-display">
                 <p className="percentage">{percentage}%</p>
                 <p className="score-text">
-                  You got <span className="score-value">{score}</span> out of <span className="total-value">{currentExam.questions.length}</span> questions correct
+                  You got <span className="score-value">{score}</span> out of <span className="total-value">{savedCount}</span> saved questions correct
                 </p>
               </div>
               <button
@@ -185,7 +250,7 @@ const ExamPractice = () => {
 
   const currentQuestion = currentExam.questions[currentQuestionIndex];
   const answered = answers[currentQuestionIndex] !== undefined;
-  const answeredCount = Object.keys(answers).length;
+  const savedCount = Object.keys(savedAnswers).length;
   const isFlagged = flaggedQuestions.has(currentQuestionIndex);
 
   return (
@@ -196,9 +261,9 @@ const ExamPractice = () => {
         <div className="exam-header-bar">
           <div className="exam-title">{currentExam.title}</div>
           <div className="timer-section">
-            <div className="timer-circle">
+            <div className={`timer-circle ${timeLeft < 300 ? 'critical' : ''}`}>
               <span className="timer-icon">⏱️</span>
-              <span className="timer-value">∞</span>
+              <span className="timer-value">{formatTime(timeLeft)}</span>
             </div>
           </div>
           <div className="user-section">
@@ -238,18 +303,24 @@ const ExamPractice = () => {
                 ))}
               </div>
             </div>
+
+            {!isSaved && answered && (
+              <div className="unsaved-warning">
+                ⚠️ Click Save to confirm your answer
+              </div>
+            )}
           </div>
 
           <div className="exam-sidebar">
             <div className="summary-panel">
-              <h4>Questions ({answeredCount}/{currentExam.questions.length})</h4>
+              <h4>Questions ({savedCount}/{currentExam.questions.length})</h4>
               <div className="question-grid">
                 {currentExam.questions.map((_, index) => (
                   <button
                     key={index}
                     className={`question-btn ${
                       index === currentQuestionIndex ? 'active' : ''
-                    } ${answers[index] !== undefined ? 'answered' : ''} ${
+                    } ${savedAnswers[index] !== undefined ? 'answered' : ''} ${
                       flaggedQuestions.has(index) ? 'flagged' : ''
                     }`}
                     onClick={() => handleQuestionClick(index)}
@@ -261,8 +332,8 @@ const ExamPractice = () => {
 
               <div className="stats">
                 <div className="stat-row">
-                  <span>Answered:</span>
-                  <span>{answeredCount}</span>
+                  <span>Saved:</span>
+                  <span>{savedCount}</span>
                 </div>
                 <div className="stat-row">
                   <span>Flagged:</span>
@@ -270,7 +341,7 @@ const ExamPractice = () => {
                 </div>
                 <div className="stat-row">
                   <span>Not Visited:</span>
-                  <span>{currentExam.questions.length - answeredCount}</span>
+                  <span>{currentExam.questions.length - savedCount}</span>
                 </div>
               </div>
             </div>
@@ -301,7 +372,8 @@ const ExamPractice = () => {
           <button
             className="next-btn"
             onClick={handleNext}
-            disabled={currentQuestionIndex === currentExam.questions.length - 1}
+            disabled={!isSaved || currentQuestionIndex === currentExam.questions.length - 1}
+            title={!isSaved ? 'Save your answer first' : ''}
           >
             Next ▶️
           </button>
@@ -313,8 +385,9 @@ const ExamPractice = () => {
             Last ⏭️
           </button>
           <button
-            className="save-btn"
-            onClick={() => console.log('Answers saved')}
+            className={`save-btn ${!isSaved ? 'highlight' : ''}`}
+            onClick={handleSave}
+            disabled={!answered}
           >
             💾 Save
           </button>

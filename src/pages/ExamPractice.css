@@ -5,6 +5,8 @@
   min-height: 100vh;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .exam-practice-page.dark-mode {
@@ -12,32 +14,74 @@
   color: #ecf0f1;
 }
 
-/* Header Section */
-.exam-header {
+/* Hero Section */
+.exam-hero {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #c1272d 100%);
+  padding: 60px 20px;
   text-align: center;
-  margin-bottom: 60px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 60px 30px 0 30px;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.exam-header h1 {
+.exam-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.exam-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(20px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.exam-hero h1 {
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 15px;
-  color: #e53e3e;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.exam-header p {
+.exam-hero p {
   font-size: 18px;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.exam-practice-page.dark-mode .exam-header p {
-  color: #aaa;
+  margin: 0;
+  opacity: 0.95;
 }
 
 /* Filter Buttons */
@@ -83,144 +127,211 @@
 
 /* Container */
 .exam-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Category Filter */
+.category-filter {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.category-filter h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.exam-practice-page.dark-mode .category-filter h2 {
+  color: #ecf0f1;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 30px 60px 30px;
 }
 
-/* Exam Selection View */
-.exam-selection,
-.quiz-selection {
-  width: 100%;
+.filter-btn {
+  padding: 12px 16px;
+  border: none;
+  background: rgba(6, 145, 252, 0.6);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
-.exams-grid,
-.quizzes-grid {
+.filter-btn:hover {
+  background: rgba(6, 145, 252, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.4);
+}
+
+.filter-btn.active {
+  background: rgba(6, 145, 252, 0.9);
+  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.5);
+}
+
+/* Exams Grid */
+.exams-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  margin-bottom: 40px;
 }
 
-.exam-card,
-.quiz-card {
-  background: #f8f9fa;
+.exam-card {
+  background: white;
   border-radius: 12px;
-  padding: 30px;
-  text-align: center;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.exam-practice-page.dark-mode .exam-card,
-.exam-practice-page.dark-mode .quiz-card {
+.exam-practice-page.dark-mode .exam-card {
   background: #2a2a2a;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.exam-card:hover,
-.quiz-card:hover {
+.exam-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(229, 62, 62, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-.exam-icon,
-.quiz-icon {
-  font-size: 60px;
-  margin-bottom: 15px;
-}
-
-.exam-card h2,
-.quiz-card h2 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #333;
-  flex-grow: 1;
-}
-
-.exam-practice-page.dark-mode .exam-card h2,
-.exam-practice-page.dark-mode .quiz-card h2 {
-  color: #ecf0f1;
-}
-
-.exam-meta,
-.quiz-meta {
+.card-header {
+  background: linear-gradient(135deg, #FF741F 0%, #ff8a3d 100%);
+  padding: 20px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
 }
 
-.exam-info-small,
-.quiz-info-small {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
+.card-icon {
+  font-size: 40px;
+  flex: 1;
 }
 
-.attempt-count {
-  color: #e53e3e;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.attempt-info {
-  color: #666;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.exam-practice-page.dark-mode .attempt-info {
-  color: #aaa;
-}
-
-.difficulty {
-  background: rgba(229, 62, 62, 0.1);
-  color: #e53e3e;
+.status-badge {
+  background: rgba(255, 255, 255, 0.3);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
+  white-space: nowrap;
+  margin-left: 10px;
 }
 
-.exam-practice-page.dark-mode .difficulty {
-  background: rgba(229, 62, 62, 0.2);
-  color: #ff6b6b;
+.card-body {
+  padding: 20px;
+  flex: 1;
 }
 
-.questions-count {
-  color: #666;
-  font-size: 13px;
+.card-body h3 {
+  font-size: 16px;
+  color: #FF741F;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.card-body h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 12px 0;
   font-weight: 600;
+  line-height: 1.4;
 }
 
-.exam-practice-page.dark-mode .questions-count {
+.exam-practice-page.dark-mode .card-body h4 {
+  color: #ecf0f1;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.exam-practice-page.dark-mode .card-body p {
   color: #aaa;
 }
 
-.start-btn {
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+.card-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exam-practice-page.dark-mode .card-footer {
+  border-top-color: #444;
+}
+
+.card-features {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+.exam-practice-page.dark-mode .feature-tag {
+  background: #333;
+  color: #aaa;
+}
+
+.start-exam-btn {
+  background: linear-gradient(135deg, #0691FC 0%, #0470c9 100%);
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-.start-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+.start-exam-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.3);
 }
 
-.start-btn:active {
+.start-exam-btn:active {
   transform: scale(0.98);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 18px;
 }
 
 /* ======================== PROFESSIONAL EXAM UI ======================== */
@@ -278,10 +389,25 @@
   justify-content: center;
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: linear-gradient(135deg, #0691FC 0%, #0470c9 100%);
   border-radius: 50%;
   color: white;
   font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.timer-circle.critical {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  animation: pulse-critical 1s infinite;
+}
+
+@keyframes pulse-critical {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(229, 62, 62, 0);
+  }
 }
 
 .timer-icon {
@@ -726,6 +852,44 @@
   cursor: not-allowed;
 }
 
+.save-btn.highlight {
+  background: #ffd700;
+  color: #333;
+  border: 1px solid #ffd700;
+  animation: blink 1s infinite;
+  font-weight: 700;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unsaved-warning {
+  background: rgba(255, 193, 7, 0.2);
+  border-left: 4px solid #ffc107;
+  padding: 10px 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  color: #ff6f00;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.exam-practice-page.dark-mode .unsaved-warning {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffb300;
+}
+
 .restart-btn {
   background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
   color: white;
@@ -772,69 +936,30 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .exam-wrapper,
-  .quiz-wrapper {
-    gap: 15px;
-  }
-
-  .exam-sidebar,
-  .quiz-sidebar {
-    width: 240px;
-    max-height: 500px;
-  }
-
-  .question-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .exam-header h1 {
+  .filter-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exam-hero h1 {
     font-size: 36px;
   }
 
-  .exam-wrapper,
-  .quiz-wrapper {
-    flex-direction: column;
+  .exam-hero p {
+    font-size: 16px;
   }
 
-  .exam-sidebar,
-  .quiz-sidebar {
-    width: 100%;
-    max-height: none;
+  .hero-icon {
+    font-size: 48px;
   }
 
-  .question-grid {
-    grid-template-columns: repeat(6, 1fr);
+  .exam-container {
+    padding: 30px 15px;
   }
 
-  .exam-header-bar,
-  .quiz-header-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .timer-section {
-    order: 2;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .exam-title,
-  .quiz-title {
-    order: 1;
-  }
-
-  .user-section {
-    order: 3;
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .filter-buttons {
-    gap: 10px;
+  .category-filter h2 {
+    font-size: 22px;
   }
 
   .filter-btn {
@@ -842,122 +967,51 @@
     font-size: 13px;
   }
 
-  .exam-footer,
-  .quiz-footer {
-    flex-wrap: wrap;
+  .exams-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .exam-footer button,
-  .quiz-footer button {
-    padding: 8px 12px;
-    font-size: 12px;
+  .card-header {
+    padding: 15px;
   }
 
-  .question {
-    font-size: 20px;
+  .card-body {
+    padding: 15px;
   }
 
-  .percentage {
-    font-size: 40px;
+  .card-body h4 {
+    font-size: 16px;
+  }
+
+  .card-footer {
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .exam-header h1 {
+  .filter-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-hero {
+    padding: 40px 15px;
+  }
+
+  .exam-hero h1 {
     font-size: 28px;
   }
 
-  .exam-header {
-    margin-bottom: 40px;
+  .hero-icon {
+    font-size: 40px;
   }
 
-  .exam-main,
-  .quiz-main {
-    padding: 20px;
-  }
-
-  .exam-container {
-    padding: 0 30px 60px 30px;
-  }
-
-  .question {
+  .category-filter h2 {
     font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  .option-label {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .options {
-    gap: 10px;
-  }
-
-  .exam-header-bar,
-  .quiz-header-bar {
-    padding: 10px;
-  }
-
-  .timer-circle {
-    width: 70px;
-    height: 70px;
-    font-size: 16px;
-  }
-
-  .exam-info-bar,
-  .quiz-info-bar {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-  }
-
-  .right-section {
-    width: 100%;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .exam-footer,
-  .quiz-footer {
-    gap: 8px;
-  }
-
-  .exam-footer button,
-  .quiz-footer button {
-    padding: 6px 10px;
-    font-size: 11px;
-    flex: 1;
-    min-width: calc(50% - 4px);
-  }
-
-  .question-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6px;
-  }
-
-  .question-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 12px;
-  }
-
-  .percentage {
-    font-size: 32px;
-  }
-
-  .filter-buttons {
-    gap: 8px;
   }
 
   .filter-btn {
-    padding: 8px 12px;
+    padding: 6px 12px;
     font-size: 12px;
-  }
-
-  .exams-grid,
-  .quizzes-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 }
