@@ -124,7 +124,10 @@ const Header = () => {
       <div className="vu-nav">
         <div className="vu-nav-container">
           <ul className={`vu-nav-links ${isVUMenuOpen ? 'vu-open' : ''}`}>
-            <li className="vu-dropdown">
+            <li className="vu-dropdown"
+              onMouseEnter={() => setIsVUFilesOpen(true)}
+              onMouseLeave={() => setIsVUFilesOpen(false)}
+            >
               <button 
                 className="vu-dropdown-toggle"
                 onClick={() => setIsVUFilesOpen(!isVUFilesOpen)}

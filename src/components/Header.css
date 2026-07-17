@@ -347,7 +347,7 @@ html {
 
 /* Virtual University Navigation */
 .vu-nav {
-  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  background: #D13535;
   padding: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -383,7 +383,7 @@ html {
   display: block;
   padding: 15px 25px;
   text-decoration: none;
-  color: #ecf0f1;
+  color: white;
   font-weight: 500;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -394,8 +394,8 @@ html {
 
 .vu-nav-links a:hover,
 .vu-nav-links a:focus {
-  background: rgba(255, 255, 255, 0.15);
-  color: #f7fafc;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
   outline: none;
 }
 
@@ -433,7 +433,7 @@ html {
   padding: 15px 25px;
   background: none;
   border: none;
-  color: #ecf0f1;
+  color: white;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
@@ -445,8 +445,8 @@ html {
 
 .vu-dropdown-toggle:hover,
 .vu-dropdown-toggle:focus {
-  background: rgba(255, 255, 255, 0.15);
-  color: #f7fafc;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
   outline: none;
 }
 
@@ -454,7 +454,7 @@ html {
   position: absolute;
   top: 100%;
   left: 0;
-  background: linear-gradient(135deg, #d63230 0%, #a71f1f 100%);
+  background: #0691FC;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -481,7 +481,7 @@ html {
 .vu-dropdown-menu a {
   display: block;
   padding: 12px 25px;
-  color: #ecf0f1;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   font-size: 13px;
@@ -490,8 +490,8 @@ html {
 }
 
 .vu-dropdown-menu a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #f7fafc;
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
 }
 
 /* Mobile responsiveness for VU Nav */
@@ -621,7 +621,7 @@ html {
 
   .vu-dropdown-menu {
     position: static;
-    background: rgba(0, 0, 0, 0.15);
+    background: #0691FC;
     box-shadow: none;
     max-height: 0;
     overflow: hidden;
