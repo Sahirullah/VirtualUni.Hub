@@ -992,7 +992,7 @@
 /* Results */
 .results-wrapper {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 250px 1fr;
   gap: 24px;
   padding: 24px;
   flex: 1;
@@ -1008,7 +1008,6 @@
 
 .results-section {
   margin-top: 30px;
-  width: 80%;
 }
 
 .results-section h2 {
