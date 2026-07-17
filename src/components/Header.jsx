@@ -7,6 +7,7 @@ import './Header.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVUMenuOpen, setIsVUMenuOpen] = useState(false);
+  const [isVUFilesOpen, setIsVUFilesOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
 
   // Close mobile menu when clicking outside
@@ -27,6 +28,7 @@ const Header = () => {
       if (window.innerWidth > 768) {
         setIsMenuOpen(false);
         setIsVUMenuOpen(false);
+        setIsVUFilesOpen(false);
       }
     };
 
@@ -122,14 +124,25 @@ const Header = () => {
       <div className="vu-nav">
         <div className="vu-nav-container">
           <ul className={`vu-nav-links ${isVUMenuOpen ? 'vu-open' : ''}`}>
-            <li><Link to="/vu-handout" onClick={() => setIsVUMenuOpen(false)}>Handouts</Link></li>
-            <li><Link to="/notes" onClick={() => setIsVUMenuOpen(false)}>Highlighted Handout</Link></li>
-            <li><Link to="/midterm" onClick={() => setIsVUMenuOpen(false)}>Midterm</Link></li>
-            <li><Link to="/final-term" onClick={() => setIsVUMenuOpen(false)}>Finalterm</Link></li>
-            <li><Link to="/quizzes" onClick={() => setIsVUMenuOpen(false)}>Quizzes</Link></li>
-            <li><Link to="/assignment" onClick={() => setIsVUMenuOpen(false)}>Assignments</Link></li>
-            <li><a href="#gdbs" onClick={() => setIsVUMenuOpen(false)}>GDBs</a></li>
-            <li><Link to="/midterm-reviews" onClick={() => setIsVUMenuOpen(false)}>Exam Reviews</Link></li>
+            <li className="vu-dropdown">
+              <button 
+                className="vu-dropdown-toggle"
+                onClick={() => setIsVUFilesOpen(!isVUFilesOpen)}
+              >
+                VU Files 📁
+              </button>
+              <ul className={`vu-dropdown-menu ${isVUFilesOpen ? 'vu-dropdown-open' : ''}`}>
+                <li><Link to="/vu-handout" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Handouts</Link></li>
+                <li><Link to="/highlighted-handout" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Highlighted Handout</Link></li>
+                <li><Link to="/notes" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Notes</Link></li>
+                <li><Link to="/midterm" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Midterm</Link></li>
+                <li><Link to="/final-term" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Finalterm</Link></li>
+                <li><Link to="/quizzes" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Quizzes</Link></li>
+                <li><Link to="/assignment" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Assignments</Link></li>
+                <li><a href="#gdbs" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>GDBs</a></li>
+                <li><Link to="/midterm-reviews" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Exam Reviews</Link></li>
+              </ul>
+            </li>
             <li><Link to="/blogs" onClick={() => setIsVUMenuOpen(false)}>Blogs</Link></li>
             <li><Link to="/softwares" onClick={() => setIsVUMenuOpen(false)}>VIP Softwares</Link></li>
             <li><Link to="/exam-practice" onClick={() => setIsVUMenuOpen(false)}>Exam Practice</Link></li>
