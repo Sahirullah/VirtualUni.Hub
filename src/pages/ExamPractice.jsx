@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { examPracticeData, quizCategories, getQuestionSet } from '../data/examPracticeData';
+import { allMidtermData, midtermCategories } from '../data/midtermData';
+import { finalTermData, finalTermDataPart2 } from '../data/finalTermData';
 import { useTheme } from '../context/ThemeContext';
 import './ExamPractice.css';
 
 const ExamPractice = () => {
   const { isDarkMode } = useTheme();
+  const [examType, setExamType] = useState('exam'); // 'exam', 'midterm', or 'finalterm'
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentExam, setCurrentExam] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -19,9 +22,69 @@ const ExamPractice = () => {
   const [isSaved, setIsSaved] = useState(true);
   const [showSummary, setShowSummary] = useState(false);
 
+  // Get appropriate data based on exam type
+  const getExamData = () => {
+    switch(examType) {
+      case 'midterm':
+        return allMidtermData;
+      case 'finalterm':
+        return [...finalTermData, ...finalTermDataPart2];
+      case 'exam':
+      default:
+        return examPracticeData;
+    }
+  };
+
+  const getCategories = () => {
+    switch(examType) {
+      case 'midterm':
+        return midtermCategories;
+      case 'finalterm':
+        return [
+          { id: 'all', name: 'All Courses' },
+          { id: 'acc', name: 'ACC - Accounting' },
+          { id: 'bif', name: 'BIF - Bioinformatics' },
+          { id: 'bio', name: 'BIO - Biology' },
+          { id: 'bnk', name: 'BNK - Banking' },
+          { id: 'bt', name: 'BT - Biotechnology' },
+          { id: 'che', name: 'CHE - Chemistry' },
+          { id: 'cs', name: 'CS - Computer Science' },
+          { id: 'eco', name: 'ECO - Economics' },
+          { id: 'edu', name: 'EDU - Education' },
+          { id: 'eng', name: 'ENG - English' },
+          { id: 'eth', name: 'ETH - Ethics' },
+          { id: 'fin', name: 'FIN - Finance' },
+          { id: 'gsc', name: 'GSC - General Science' },
+          { id: 'hrm', name: 'HRM - Human Resource Management' },
+          { id: 'isl', name: 'ISL - Islamic Studies' },
+          { id: 'it', name: 'IT - Information Technology' },
+          { id: 'mcm', name: 'MCM - Mass Communication' },
+          { id: 'mgmt', name: 'MGMT - Management' },
+          { id: 'mgt', name: 'MGT - Business & Management' },
+          { id: 'mkt', name: 'MKT - Marketing' },
+          { id: 'mth', name: 'MTH - Mathematics' },
+          { id: 'pad', name: 'PAD - Public Administration' },
+          { id: 'pak', name: 'PAK - Pakistan Studies' },
+          { id: 'phy', name: 'PHY - Physics' },
+          { id: 'psc', name: 'PSC - Political Science' },
+          { id: 'psy', name: 'PSY - Psychology' },
+          { id: 'soc', name: 'SOC - Sociology' },
+          { id: 'sta', name: 'STA - Statistics' },
+          { id: 'urd', name: 'URD - Urdu' },
+          { id: 'zoo', name: 'ZOO - Zoology' },
+        ];
+      case 'exam':
+      default:
+        return quizCategories;
+    }
+  };
+
+  const allExamData = getExamData();
+  const currentCategories = getCategories();
+
   const filteredExams = selectedCategory === 'all'
-    ? examPracticeData
-    : examPracticeData.filter(exam => exam.category === selectedCategory);
+    ? allExamData
+    : allExamData.filter(exam => exam.category === selectedCategory);
 
   // Timer effect
   useEffect(() => {
@@ -142,16 +205,40 @@ const ExamPractice = () => {
         <div className="exam-hero">
           <div className="hero-content">
             <div className="hero-icon">📝</div>
-            <h1>EXAM PRACTICE</h1>
-            <p>Virtual University Complete Exam Practice Tests</p>
+            <h1>{examType === 'midterm' ? 'MIDTERM PRACTICE' : examType === 'finalterm' ? 'FINAL TERM PRACTICE' : 'EXAM PRACTICE'}</h1>
+            <p>Virtual University Complete {examType === 'midterm' ? 'Midterm' : examType === 'finalterm' ? 'Final Term' : 'Exam'} Practice Tests</p>
           </div>
         </div>
 
         <div className="exam-container">
+          <div className="exam-type-filter">
+            <h2>Select Exam Type</h2>
+            <div className="exam-type-buttons">
+              <button 
+                className={`exam-type-btn ${examType === 'exam' ? 'active' : ''}`}
+                onClick={() => { setExamType('exam'); setSelectedCategory('all'); }}
+              >
+                📋 Exam Practice
+              </button>
+              <button 
+                className={`exam-type-btn ${examType === 'midterm' ? 'active' : ''}`}
+                onClick={() => { setExamType('midterm'); setSelectedCategory('all'); }}
+              >
+                📚 Midterm Practice
+              </button>
+              <button 
+                className={`exam-type-btn ${examType === 'finalterm' ? 'active' : ''}`}
+                onClick={() => { setExamType('finalterm'); setSelectedCategory('all'); }}
+              >
+                🎓 Final Term Practice
+              </button>
+            </div>
+          </div>
+
           <div className="category-filter">
             <h2>Select Category</h2>
             <div className="filter-buttons">
-              {quizCategories.map(cat => (
+              {currentCategories.map(cat => (
                 <button
                   key={cat.id}
                   className={`filter-btn ${selectedCategory === cat.id ? 'active' : ''}`}
