@@ -13,6 +13,8 @@ import MidtermReviews from './pages/MidtermReviews'
 import Blogs from './pages/Blogs'
 import ImportantSoftwares from './pages/ImportantSoftwares'
 import ExamPractice from './pages/ExamPractice'
+import MidtermPractice from './pages/MidtermPractice'
+import FinalTermPractice from './pages/FinalTermPractice'
 import HighlightedHandout from './pages/HighlightedHandout'
 import Notes from './pages/Notes'
 
@@ -36,6 +38,8 @@ function App() {
             <Route path="/notes" element={<Notes />} />
             <Route path="/softwares" element={<ImportantSoftwares />} />
             <Route path="/exam-practice" element={<ExamPractice />} />
+            <Route path="/midterm-practice" element={<MidtermPractice />} />
+            <Route path="/final-term-practice" element={<FinalTermPractice />} />
           </Routes>
         </div>
       </Router>
