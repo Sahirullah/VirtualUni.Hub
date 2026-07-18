@@ -43,7 +43,7 @@ const Midterm = () => {
 
         <div className="papers-grid">
           {filteredData.sort((a, b) => a.code.localeCompare(b.code)).map(course => (
-            <div key={course.id} className="paper-card">
+            <div key={course.code} className="paper-card">
               <div className="card-header">
                 <div className="card-icon">{course.image}</div>
                 <h3>{course.code}</h3>
