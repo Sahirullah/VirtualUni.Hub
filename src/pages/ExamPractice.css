@@ -373,7 +373,7 @@
   box-shadow: 0 6px 16px rgba(6, 145, 252, 0.5);
 }
 
-/* Responsive */
+/* Responsive - Desktop & Tablets */
 @media (max-width: 1200px) {
   .exams-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -382,20 +382,789 @@
   .filter-buttons {
     grid-template-columns: repeat(8, 1fr);
   }
+
+  .exam-wrapper {
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .exam-sidebar {
+    width: 240px;
+  }
+
+  .exam-header-bar {
+    gap: 20px;
+    padding: 12px 20px;
+  }
+
+  .timer-circle {
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
+  }
+
+  .timer-icon {
+    font-size: 20px;
+  }
+
+  .timer-value {
+    font-size: 14px;
+  }
 }
 
+/* Responsive - Tablet (768px) */
 @media (max-width: 768px) {
+  .exam-hero {
+    padding: 40px 16px;
+  }
+
+  .exam-hero h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .exam-hero p {
+    font-size: 14px;
+  }
+
+  .exam-container {
+    padding: 30px 16px;
+    max-width: 100%;
+  }
+
   .exams-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .filter-buttons {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
   }
 
   .filter-btn {
     font-size: 9px;
     padding: 3px 4px;
+  }
+
+  .exam-type-filter h2,
+  .category-filter h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .exam-type-buttons {
+    gap: 12px;
+  }
+
+  .exam-type-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-width: 140px;
+  }
+
+  .exam-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-header {
+    padding: 16px;
+  }
+
+  .card-body h3 {
+    font-size: 14px;
+  }
+
+  .card-body h4 {
+    font-size: 16px;
+  }
+
+  .card-body p {
+    font-size: 13px;
+  }
+
+  .start-exam-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* Exam Page Styles */
+  .exam-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .exam-main {
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .exam-sidebar {
+    width: 100%;
+    padding: 16px;
+    border-radius: 6px;
+    order: -1;
+  }
+
+  .exam-header-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .exam-title {
+    font-size: 16px;
+  }
+
+  .timer-section {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .timer-circle {
+    width: 65px;
+    height: 65px;
+    border-width: 2px;
+  }
+
+  .timer-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .timer-value {
+    font-size: 12px;
+  }
+
+  .exam-info-bar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .right-section {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .marks {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .summary-btn {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .question {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .answer-section h3 {
+    font-size: 13px;
+  }
+
+  .option-label {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .option-label input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+
+  .summary-panel h4 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .question-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+  }
+
+  .question-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+
+  .stat-row {
+    font-size: 11px;
+  }
+
+  .exam-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .exam-footer button {
+    padding: 8px 12px;
+    font-size: 11px;
+    flex: 1;
+    min-width: 70px;
+  }
+
+  /* Results Page */
+  .results-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .results-sidebar {
+    order: -1;
+  }
+
+  .results-main {
+    padding: 16px;
+  }
+
+  .score-circle-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .score-percentage {
+    font-size: 28px;
+  }
+
+  .score-summary {
+    font-size: 12px;
+  }
+
+  .score-breakdown-visual {
+    gap: 10px;
+  }
+
+  .breakdown-number {
+    font-size: 20px;
+  }
+
+  .breakdown-item-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .restart-btn-new {
+    padding: 10px 30px;
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .result-item {
+    padding: 12px;
+  }
+
+  .result-question {
+    font-size: 13px;
+  }
+
+  .result-answer {
+    font-size: 12px;
+  }
+
+  .answer-label {
+    min-width: 100px;
+  }
+}
+
+/* Responsive - Small Tablet & Large Phone (600px) */
+@media (max-width: 600px) {
+  .exam-hero h1 {
+    font-size: 24px;
+  }
+
+  .exam-hero p {
+    font-size: 13px;
+  }
+
+  .exam-container {
+    padding: 20px 12px;
+  }
+
+  .exam-type-filter h2,
+  .category-filter h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .exam-type-buttons {
+    gap: 8px;
+  }
+
+  .exam-type-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 100px;
+  }
+
+  .filter-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .filter-btn {
+    font-size: 8px;
+    padding: 2px 3px;
+  }
+
+  .card-body h3 {
+    font-size: 13px;
+  }
+
+  .card-body h4 {
+    font-size: 14px;
+  }
+
+  .card-body p {
+    font-size: 12px;
+  }
+
+  .feature-tag {
+    font-size: 11px;
+  }
+
+  .exam-header-bar {
+    padding: 10px 12px;
+  }
+
+  .exam-title {
+    font-size: 14px;
+  }
+
+  .timer-circle {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+  }
+
+  .timer-icon {
+    font-size: 16px;
+  }
+
+  .timer-value {
+    font-size: 11px;
+  }
+
+  .exam-info-bar {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .question {
+    font-size: 14px;
+  }
+
+  .answer-section h3 {
+    font-size: 12px;
+  }
+
+  .option-label {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .question-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .question-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 7px;
+  }
+
+  .stat-row {
+    font-size: 10px;
+  }
+
+  .exam-footer button {
+    padding: 6px 8px;
+    font-size: 10px;
+    min-width: 60px;
+  }
+
+  .score-percentage {
+    font-size: 24px;
+  }
+
+  .breakdown-number {
+    font-size: 18px;
+  }
+
+  .result-item {
+    padding: 10px;
+  }
+
+  .result-question {
+    font-size: 12px;
+  }
+
+  .result-answer {
+    font-size: 11px;
+  }
+
+  .answer-label {
+    min-width: 80px;
+    font-size: 11px;
+  }
+}
+
+/* Responsive - Mobile Phone (480px and below) */
+@media (max-width: 480px) {
+  .exam-hero {
+    padding: 24px 12px;
+  }
+
+  .exam-hero h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .exam-hero p {
+    font-size: 12px;
+  }
+
+  .exam-container {
+    padding: 16px 10px;
+  }
+
+  .exam-type-filter h2,
+  .category-filter h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .exam-type-buttons {
+    gap: 6px;
+  }
+
+  .exam-type-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-width: 90px;
+  }
+
+  .filter-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .filter-btn {
+    font-size: 7px;
+    padding: 2px 3px;
+  }
+
+  .card-header {
+    padding: 12px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .card-body h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .card-body h4 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .card-body p {
+    font-size: 11px;
+  }
+
+  .card-footer {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .feature-tag {
+    font-size: 10px;
+  }
+
+  .start-exam-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Exam Page */
+  .exam-wrapper {
+    padding: 12px;
+  }
+
+  .exam-main {
+    padding: 16px 12px;
+  }
+
+  .exam-sidebar {
+    padding: 12px;
+  }
+
+  .exam-header-bar {
+    padding: 8px 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exam-title {
+    font-size: 13px;
+    word-break: break-word;
+  }
+
+  .timer-circle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .timer-icon {
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+  .timer-value {
+    font-size: 10px;
+  }
+
+  .exam-info-bar {
+    padding: 6px 10px;
+    font-size: 11px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .right-section {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .marks {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .summary-btn {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .question-box {
+    margin-bottom: 20px;
+  }
+
+  .question {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .answer-section h3 {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .options {
+    gap: 10px;
+  }
+
+  .option-label {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .option-label input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+  }
+
+  .option-text {
+    font-size: 12px;
+  }
+
+  .summary-panel h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .question-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .question-btn {
+    width: 16px;
+    height: 16px;
+    font-size: 6px;
+  }
+
+  .stats {
+    padding: 12px;
+    margin-top: 12px;
+  }
+
+  .stat-row {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+
+  .exam-footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .exam-footer button {
+    padding: 6px 4px;
+    font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .exam-footer .first-btn,
+  .exam-footer .prev-btn,
+  .exam-footer .flag-btn,
+  .exam-footer .next-btn,
+  .exam-footer .last-btn {
+    grid-column: span 1;
+  }
+
+  .exam-footer .save-btn {
+    grid-column: span 3;
+  }
+
+  .exam-footer .finish-btn {
+    grid-column: span 3;
+  }
+
+  /* Results Page */
+  .results-wrapper {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+    flex-direction: column-reverse;
+  }
+
+  .results-main {
+    padding: 12px;
+  }
+
+  .results-section {
+    margin-top: 20px;
+  }
+
+  .results-section h2 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .results-group h3 {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .result-item {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .result-header {
+    margin-bottom: 8px;
+  }
+
+  .result-number {
+    font-size: 12px;
+  }
+
+  .result-badge {
+    font-size: 10px;
+  }
+
+  .result-question {
+    font-size: 12px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .result-answer {
+    font-size: 11px;
+    margin-bottom: 6px;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .answer-label {
+    min-width: auto;
+    font-size: 10px;
+  }
+
+  .answer-text {
+    font-size: 11px;
+  }
+
+  .score-card {
+    gap: 10px;
+  }
+
+  .score-title {
+    font-size: 14px;
+  }
+
+  .score-circle-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .score-percentage {
+    font-size: 22px;
+  }
+
+  .score-summary {
+    font-size: 11px;
+  }
+
+  .score-breakdown-visual {
+    gap: 8px;
+    width: 100%;
+  }
+
+  .breakdown-number {
+    font-size: 16px;
+  }
+
+  .breakdown-item-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .breakdown-item-circle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .restart-btn-new {
+    padding: 8px 20px;
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .no-results {
+    padding: 40px 16px;
+    font-size: 16px;
   }
 }
 
