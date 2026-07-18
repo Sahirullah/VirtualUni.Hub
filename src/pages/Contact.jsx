@@ -68,7 +68,7 @@ const Contact = () => {
       <section className="contact-hero">
         <div className="hero-overlay">
           <div className="hero-content">
-            <h1>Contact Virtual Library</h1>
+            <h1>Contact Virtual Uni Hub</h1>
             <p>Get in touch with us for educational support, resources, and assistance</p>
           </div>
         </div>
