@@ -5,8 +5,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import VUHandout from './pages/VUHandout'
-import Midterm from './pages/Midterm'
-import FinalTerm from './pages/FinalTerm'
+import MidtermFiles from './pages/MidtermFiles'
+import FinalTermFiles from './pages/FinalTermFiles'
 import Quizzes from './pages/Quizzes'
 import Assignment from './pages/Assignment'
 import MidtermReviews from './pages/MidtermReviews'
@@ -29,8 +29,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/vu-handout" element={<VUHandout />} />
             <Route path="/highlighted-handout" element={<HighlightedHandout />} />
-            <Route path="/midterm" element={<Midterm />} />
-            <Route path="/final-term" element={<FinalTerm />} />
+            <Route path="/midterm" element={<MidtermFiles />} />
+            <Route path="/final-term" element={<FinalTermFiles />} />
             <Route path="/quizzes" element={<Quizzes />} />
             <Route path="/assignment" element={<Assignment />} />
             <Route path="/midterm-reviews" element={<MidtermReviews />} />
