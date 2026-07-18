@@ -1822,6 +1822,7 @@
 
 .results-main {
   padding: 24px;
+  order: 1;
 }
 
 /* Results Page Responsive - Large Screens (1200px+) */
@@ -1881,11 +1882,12 @@
   }
 
   .results-sidebar {
-    order: 0;
+    order: -1;
   }
 
   .results-main {
     padding: 16px;
+    order: 1;
   }
 
   .score-card {
