@@ -57,7 +57,7 @@ const Header = () => {
             <Link to="/" className="logo-link">
               <img src={logoImage} alt="Wolfexa Logo" className="logo-image" />
               <div>
-                <h1 className="logo">VIRTUAL UNIVERSITY HUB</h1>
+                <h1 className="logo">VIRTUAL UNI HUB</h1>
                 <div className="logo-subtitle">Educational Resources</div>
               </div>
             </Link>
@@ -120,7 +120,7 @@ const Header = () => {
 
 
 
-      {/* Virtual University Navigation */}
+      {/* Virtual Uni Hub Navigation */}
       <div className="vu-nav">
         <div className="vu-nav-container">
           <ul className={`vu-nav-links ${isVUMenuOpen ? 'vu-open' : ''}`}>

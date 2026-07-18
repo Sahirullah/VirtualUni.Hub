@@ -36,7 +36,7 @@ const Reviews = () => {
       company: 'Allama Iqbal University',
       avatar: user4,
       rating: 5,
-      review: 'As an Islamic Studies student, Virtual Library provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
+      review: 'As an Islamic Studies student, Virtual University hub provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
       theme: 'Islamic Studies Notes',
       date: '1 week ago'
     }
@@ -59,7 +59,7 @@ const Reviews = () => {
         <div className="reviews-header">
           <h2 className="reviews-title">What Our Students Say</h2>
           <p className="reviews-subtitle">
-            Join thousands of students who trust Virtual Library for their academic success
+            Join thousands of students who trust Virtual University Hub for their academic success
           </p>
         </div>
 

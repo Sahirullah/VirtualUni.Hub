@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="footer-logo">
               <img src={logoImage} alt="Wolfexa Logo" className="footer-logo-image" />
               <div>
-                <h3 className="footer-logo-text">VIRTUAL LIBRARY</h3>
+                <h3 className="footer-logo-text">VIRTUAL UNIVERSITY HUB</h3>
                 <p className="footer-logo-subtitle">Educational Resources</p>
               </div>
             </div>
@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <p>&copy; 2024 Virtual Library. All rights reserved.</p>
+            <p>&copy; 2024 Virtual Uni Hub. All rights reserved.</p>
             <div className="footer-legal">
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>
