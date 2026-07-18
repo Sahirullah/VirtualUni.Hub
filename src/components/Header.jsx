@@ -55,7 +55,7 @@ const Header = () => {
         <div className="top-bar-container">
           <div className="logo-section">
             <Link to="/" className="logo-link">
-              <img src={logoImage} alt="Wolfexa Logo" className="logo-image" />
+              <img src={logoImage} alt="Virtual Uni Hub Logo" className="logo-image" />
               <div>
                 <h1 className="logo">VIRTUAL UNI HUB</h1>
                 <div className="logo-subtitle">Educational Resources</div>

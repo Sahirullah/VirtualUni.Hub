@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { examPracticeData, quizCategories, getQuestionSet } from '../data/examPracticeData';
-import { allMidtermData, midtermCategories } from '../data/midtermData';
-import { finalTermData, finalTermDataPart2 } from '../data/finalTermData';
 import { midtermExamPracticeData, midtermExamPracticeCategories as midtermExamCategories } from '../data/midtermExamPracticeData';
 import { finalTermExamPracticeData, finalTermExamPracticeCategories as finalTermExamCategories } from '../data/finalTermExamPracticeData';
 import { useTheme } from '../context/ThemeContext';

@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="footer-main">
           <div className="footer-section footer-brand">
             <div className="footer-logo">
-              <img src={logoImage} alt="Wolfexa Logo" className="footer-logo-image" />
+              <img src={logoImage} alt="Virtual Uni Hub Logo" className="footer-logo-image" />
               <div>
-                <h3 className="footer-logo-text">VIRTUAL UNIVERSITY HUB</h3>
+                <h3 className="footer-logo-text">VIRTUAL UNI HUB</h3>
                 <p className="footer-logo-subtitle">Educational Resources</p>
               </div>
             </div>
