@@ -1,4 +1,4 @@
-.final-term-page {
+.papers-page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@
 }
 
 /* Hero Section */
-.final-term-hero {
+.papers-hero {
   background: linear-gradient(135deg, #0f6b9e 0%, #0d4f7e 100%);
   padding: 100px 20px;
   text-align: center;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.final-term-hero::before {
+.papers-hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@
   pointer-events: none;
 }
 
-.final-term-hero::after {
+.papers-hero::after {
   content: '';
   position: absolute;
   top: -50%;
@@ -63,7 +63,7 @@
   50% { transform: translateY(-10px); }
 }
 
-.final-term-hero h1 {
+.papers-hero h1 {
   font-size: 52px;
   font-weight: 800;
   margin: 0 0 16px 0;
@@ -72,7 +72,7 @@
   line-height: 1.1;
 }
 
-.final-term-hero p {
+.papers-hero p {
   font-size: 20px;
   margin: 0;
   opacity: 0.9;
@@ -82,7 +82,7 @@
 }
 
 /* Main Container */
-.final-term-container {
+.papers-container {
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
@@ -144,22 +144,20 @@
   margin-bottom: 60px;
 }
 
-/* Modern Card Design */
-.paper-card-modern {
+/* Paper Card */
+.paper-card {
   background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
   border: 2px solid #4a9cbf;
   border-radius: 16px;
-  padding: 40px 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.paper-card-modern::before {
+.paper-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -170,79 +168,93 @@
   pointer-events: none;
 }
 
-.paper-card-modern:hover {
-  transform: translateY(-10px);
+.paper-card:hover {
+  transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(74, 156, 191, 0.3);
   border-color: #5ab3d8;
 }
 
-.card-circle-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #4a9cbf 0%, #2d6a8f 100%);
+.card-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  margin-bottom: 25px;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.card-code {
-  font-size: 20px;
-  font-weight: 700;
-  color: #4a9cbf;
-  margin: 0 0 8px 0;
-  position: relative;
-  z-index: 1;
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 30px 0;
-  line-height: 1.4;
-  position: relative;
-  z-index: 1;
-}
-
-/* Download Buttons Grid */
-.download-buttons-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  width: 100%;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
 
-.download-btn-bordered {
-  padding: 12px 16px;
-  background: transparent;
-  border: 2px solid #f39c12;
-  color: #f39c12;
-  border-radius: 25px;
+.card-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  color: #4a9cbf;
+  margin: 0;
+  font-weight: 700;
+}
+
+.card-body {
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body h4 {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.card-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.download-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.download-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
-.download-btn-bordered:hover {
-  background: #f39c12;
-  color: #0f1419;
+.download-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
 }
 
-.download-btn-bordered:active {
+.download-btn:active {
   transform: scale(0.98);
+}
+
+.no-papers {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
+  background: rgba(74, 156, 191, 0.05);
+  border-radius: 8px;
+}
+
+.no-papers p {
+  margin: 0;
 }
 
 /* No Results */
@@ -255,17 +267,27 @@
   z-index: 1;
 }
 
+/* Dark Mode */
+.papers-page.dark-mode {
+  background: #0f1419;
+}
+
+.papers-page.dark-mode .paper-card {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+  border-color: #4a9cbf;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .filter-buttons {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .final-term-hero h1 {
+  .papers-hero h1 {
     font-size: 36px;
   }
 
-  .final-term-hero p {
+  .papers-hero p {
     font-size: 16px;
   }
 
@@ -273,7 +295,7 @@
     font-size: 48px;
   }
 
-  .final-term-container {
+  .papers-container {
     padding: 40px 20px;
   }
 
@@ -283,19 +305,12 @@
   }
 
   .papers-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
   }
 
-  .paper-card-modern {
-    padding: 30px 20px;
-  }
-
-  .card-circle-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 40px;
-    margin-bottom: 20px;
+  .paper-card {
+    padding: 25px;
   }
 }
 
@@ -304,11 +319,11 @@
     grid-template-columns: 1fr;
   }
 
-  .final-term-hero {
+  .papers-hero {
     padding: 40px 15px;
   }
 
-  .final-term-hero h1 {
+  .papers-hero h1 {
     font-size: 28px;
   }
 
@@ -321,35 +336,33 @@
     margin-bottom: 15px;
   }
 
-  .final-term-container {
+  .papers-container {
     padding: 30px 15px;
   }
 
   .papers-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .paper-card-modern {
-    padding: 25px 15px;
+  .paper-card {
+    padding: 20px;
   }
 
-  .card-circle-icon {
-    width: 70px;
-    height: 70px;
+  .card-icon {
     font-size: 35px;
   }
 
-  .card-title {
+  .card-header h3 {
     font-size: 16px;
-    margin-bottom: 20px;
   }
 
-  .download-buttons-grid {
-    gap: 10px;
+  .card-body h4 {
+    font-size: 14px;
   }
 
-  .download-btn-bordered {
-    padding: 10px 12px;
+  .download-btn {
+    padding: 8px 12px;
     font-size: 12px;
   }
 }
