@@ -57,7 +57,7 @@ const Header = () => {
             <Link to="/" className="logo-link">
               <img src={logoImage} alt="Wolfexa Logo" className="logo-image" />
               <div>
-                <h1 className="logo">VIRTUAL LIBRARY</h1>
+                <h1 className="logo">VIRTUAL UNIVERSITY HUB</h1>
                 <div className="logo-subtitle">Educational Resources</div>
               </div>
             </Link>
@@ -132,7 +132,7 @@ const Header = () => {
                 className="vu-dropdown-toggle"
                 onClick={() => setIsVUFilesOpen(!isVUFilesOpen)}
               >
-                VU Files 📁
+                VU Files
               </button>
               <ul className={`vu-dropdown-menu ${isVUFilesOpen ? 'vu-dropdown-open' : ''}`}>
                 <li><Link to="/vu-handout" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Handouts</Link></li>
