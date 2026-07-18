@@ -43,23 +43,6 @@ const ExamPractice = () => {
         return midtermExamCategories;
       case 'finalterm':
         return finalTermExamCategories;
-          { id: 'isl', name: 'ISL - Islamic Studies' },
-          { id: 'it', name: 'IT - Information Technology' },
-          { id: 'mcm', name: 'MCM - Mass Communication' },
-          { id: 'mgmt', name: 'MGMT - Management' },
-          { id: 'mgt', name: 'MGT - Business & Management' },
-          { id: 'mkt', name: 'MKT - Marketing' },
-          { id: 'mth', name: 'MTH - Mathematics' },
-          { id: 'pad', name: 'PAD - Public Administration' },
-          { id: 'pak', name: 'PAK - Pakistan Studies' },
-          { id: 'phy', name: 'PHY - Physics' },
-          { id: 'psc', name: 'PSC - Political Science' },
-          { id: 'psy', name: 'PSY - Psychology' },
-          { id: 'soc', name: 'SOC - Sociology' },
-          { id: 'sta', name: 'STA - Statistics' },
-          { id: 'urd', name: 'URD - Urdu' },
-          { id: 'zoo', name: 'ZOO - Zoology' },
-        ];
       case 'exam':
       default:
         return quizCategories;

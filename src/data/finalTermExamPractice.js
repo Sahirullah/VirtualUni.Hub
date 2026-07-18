@@ -35,6 +35,7 @@ const generateCourseQuestions = (courseName) => {
     { q: `What is important in ${courseName}?`, opts: ['Aspect 1', 'Aspect 2', 'Aspect 3', 'Aspect 4'], correct: 0 },
   ];
 
+
   for (let i = 0; i < 100; i++) {
     const base = baseQuestions[i % baseQuestions.length];
     questions.push({
@@ -108,6 +109,7 @@ export const finalTermExamPracticeData = [
   // STA - Statistics
   { id: 150, code: 'STA301', title: 'Statistics', category: 'sta', image: '📊', questions: generateCourseQuestions('Statistics'), totalQuestions: 50 },
 ];
+
 
 export const finalTermCategories = [
   { id: 'all', name: 'All Courses' },
