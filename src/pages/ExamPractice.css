@@ -1021,8 +1021,8 @@
   }
 
   .exam-footer {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 4px;
     padding: 8px;
   }
@@ -1035,21 +1035,48 @@
     text-overflow: ellipsis;
   }
 
-  .exam-footer .first-btn,
-  .exam-footer .prev-btn,
-  .exam-footer .flag-btn,
-  .exam-footer .next-btn,
-  .exam-footer .last-btn {
-    grid-column: span 1;
+  /* Row 1: First, Last, Previous, Next */
+  .exam-footer .first-btn {
+    order: 1;
+    flex: 0 0 23%;
   }
 
+  .exam-footer .prev-btn {
+    order: 3;
+    flex: 0 0 23%;
+  }
+
+  .exam-footer .next-btn {
+    order: 4;
+    flex: 0 0 23%;
+  }
+
+  .exam-footer .last-btn {
+    order: 2;
+    flex: 0 0 23%;
+  }
+
+  /* Row 2: Save, Flag, Finish */
   .exam-footer .save-btn {
-    grid-column: span 3;
+    order: 5;
+    flex: 0 0 18%;
+  }
+
+  .exam-footer .flag-btn {
+    order: 6;
+    flex: 0 0 23%;
   }
 
   .exam-footer .finish-btn {
-    grid-column: span 3;
+    order: 7;
+    flex: 0 0 23%;
   }
+
+  .exam-footer .finish-btn {
+    order: 7;
+    flex: 0 1 calc(33.33% - 3px);
+  }
+
 
   /* Results Page */
   .results-wrapper {
