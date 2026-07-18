@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { midtermExamPracticeData, midtermExamPracticeCategories } from '../data/midtermExamPracticeData';
+import { finalTermExamPracticeData, finalTermExamPracticeCategories } from '../data/finalTermExamPracticeData';
 import { useTheme } from '../context/ThemeContext';
 import { getQuestionSet } from '../data/examPracticeData';
 import './ExamPractice.css';
 
-const MidtermPractice = () => {
+const FinalTermPractice = () => {
   const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentExam, setCurrentExam] = useState(null);
@@ -21,8 +21,8 @@ const MidtermPractice = () => {
   const [showSummary, setShowSummary] = useState(false);
 
   const filteredExams = selectedCategory === 'all'
-    ? midtermExamPracticeData
-    : midtermExamPracticeData.filter(exam => exam.category === selectedCategory);
+    ? finalTermExamPracticeData
+    : finalTermExamPracticeData.filter(exam => exam.category === selectedCategory);
 
   // Timer effect
   useEffect(() => {
@@ -141,9 +141,9 @@ const MidtermPractice = () => {
         
         <div className="exam-hero">
           <div className="hero-content">
-            <div className="hero-icon">📚</div>
-            <h1>MIDTERM PRACTICE</h1>
-            <p>Virtual University Complete Midterm Practice Tests</p>
+            <div className="hero-icon">🎓</div>
+            <h1>FINAL TERM PRACTICE</h1>
+            <p>Virtual University Complete Final Term Practice Tests</p>
           </div>
         </div>
 
@@ -151,7 +151,7 @@ const MidtermPractice = () => {
           <div className="category-filter">
             <h2>Select Category</h2>
             <div className="filter-buttons">
-              {midtermExamPracticeCategories.map(cat => (
+              {finalTermExamPracticeCategories.map(cat => (
                 <button
                   key={cat.id}
                   className={`filter-btn ${selectedCategory === cat.id ? 'active' : ''}`}
@@ -168,7 +168,7 @@ const MidtermPractice = () => {
               <div key={exam.code} className="exam-card">
                 <div className="card-header">
                   <div className="card-icon">{exam.image}</div>
-                  <span className="status-badge">Midterm Practice</span>
+                  <span className="status-badge">Final Term Practice</span>
                 </div>
                 
                 <div className="card-body">
@@ -592,4 +592,4 @@ const MidtermPractice = () => {
   );
 };
 
-export default MidtermPractice;
+export default FinalTermPractice;

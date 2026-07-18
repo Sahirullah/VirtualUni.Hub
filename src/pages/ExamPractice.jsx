@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import { examPracticeData, quizCategories, getQuestionSet } from '../data/examPracticeData';
 import { allMidtermData, midtermCategories } from '../data/midtermData';
 import { finalTermData, finalTermDataPart2 } from '../data/finalTermData';
+import { midtermExamPracticeData, midtermCategories as midtermExamCategories } from '../data/midtermExamPractice';
+import { finalTermExamPracticeData, finalTermCategories as finalTermExamCategories } from '../data/finalTermExamPractice';
 import { useTheme } from '../context/ThemeContext';
 import './ExamPractice.css';
 
@@ -26,9 +28,9 @@ const ExamPractice = () => {
   const getExamData = () => {
     switch(examType) {
       case 'midterm':
-        return allMidtermData;
+        return midtermExamPracticeData;
       case 'finalterm':
-        return [...finalTermData, ...finalTermDataPart2];
+        return finalTermExamPracticeData;
       case 'exam':
       default:
         return examPracticeData;
@@ -38,24 +40,9 @@ const ExamPractice = () => {
   const getCategories = () => {
     switch(examType) {
       case 'midterm':
-        return midtermCategories;
+        return midtermExamCategories;
       case 'finalterm':
-        return [
-          { id: 'all', name: 'All Courses' },
-          { id: 'acc', name: 'ACC - Accounting' },
-          { id: 'bif', name: 'BIF - Bioinformatics' },
-          { id: 'bio', name: 'BIO - Biology' },
-          { id: 'bnk', name: 'BNK - Banking' },
-          { id: 'bt', name: 'BT - Biotechnology' },
-          { id: 'che', name: 'CHE - Chemistry' },
-          { id: 'cs', name: 'CS - Computer Science' },
-          { id: 'eco', name: 'ECO - Economics' },
-          { id: 'edu', name: 'EDU - Education' },
-          { id: 'eng', name: 'ENG - English' },
-          { id: 'eth', name: 'ETH - Ethics' },
-          { id: 'fin', name: 'FIN - Finance' },
-          { id: 'gsc', name: 'GSC - General Science' },
-          { id: 'hrm', name: 'HRM - Human Resource Management' },
+        return finalTermExamCategories;
           { id: 'isl', name: 'ISL - Islamic Studies' },
           { id: 'it', name: 'IT - Information Technology' },
           { id: 'mcm', name: 'MCM - Mass Communication' },

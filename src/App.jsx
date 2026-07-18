@@ -14,7 +14,7 @@ import Blogs from './pages/Blogs'
 import ImportantSoftwares from './pages/ImportantSoftwares'
 import ExamPractice from './pages/ExamPractice'
 import MidtermPractice from './pages/MidtermPractice'
-import FinalTermPractice from './pages/FinalTermPractice'
+import FinalTermPractice from './pages/FinalTermExamPractice'
 import HighlightedHandout from './pages/HighlightedHandout'
 import Notes from './pages/Notes'
 
