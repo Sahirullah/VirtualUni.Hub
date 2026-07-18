@@ -137,8 +137,8 @@ const Header = () => {
               <ul className={`vu-dropdown-menu ${isVUFilesOpen ? 'vu-dropdown-open' : ''}`}>
                 <li><Link to="/vu-handout" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Handouts</Link></li>
                 <li><Link to="/highlighted-handout" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Highlighted Handout</Link></li>
-                <li><Link to="/midterm" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Midterm</Link></li>
-                <li><Link to="/final-term" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Finalterm</Link></li>
+                <li><Link to="/midterm" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Midterm Files</Link></li>
+                <li><Link to="/final-term" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Finalterm Files</Link></li>
                 <li><Link to="/quizzes" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Quizzes</Link></li>
                 <li><Link to="/assignment" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>Assignments</Link></li>
                 <li><a href="#gdbs" onClick={() => { setIsVUMenuOpen(false); setIsVUFilesOpen(false); }}>GDBs</a></li>
@@ -147,7 +147,8 @@ const Header = () => {
             </li>
             <li><Link to="/blogs" onClick={() => setIsVUMenuOpen(false)}>Blogs</Link></li>
             <li><Link to="/softwares" onClick={() => setIsVUMenuOpen(false)}>VIP Softwares</Link></li>
-          </ul>
+            <li><Link to="/exam-practice" onClick={() => setIsVUMenuOpen(false)}>Exam Practice</Link></li>
+           </ul>
           <button 
             className={`vu-menu-toggle ${isVUMenuOpen ? 'active' : ''}`}
             onClick={toggleVUMenu}

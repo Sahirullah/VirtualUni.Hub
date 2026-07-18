@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import { examPracticeData, quizCategories, getQuestionSet } from '../data/examPracticeData';
 import { allMidtermData, midtermCategories } from '../data/midtermData';
 import { finalTermData, finalTermDataPart2 } from '../data/finalTermData';
-import { midtermExamPracticeData, midtermCategories as midtermExamCategories } from '../data/midtermExamPractice';
-import { finalTermExamPracticeData, finalTermCategories as finalTermExamCategories } from '../data/finalTermExamPractice';
+import { midtermExamPracticeData, midtermExamPracticeCategories as midtermExamCategories } from '../data/midtermExamPracticeData';
+import { finalTermExamPracticeData, finalTermExamPracticeCategories as finalTermExamCategories } from '../data/finalTermExamPracticeData';
 import { useTheme } from '../context/ThemeContext';
 import './ExamPractice.css';
 
