@@ -147,7 +147,6 @@ const Header = () => {
             </li>
             <li><Link to="/blogs" onClick={() => setIsVUMenuOpen(false)}>Blogs</Link></li>
             <li><Link to="/softwares" onClick={() => setIsVUMenuOpen(false)}>VIP Softwares</Link></li>
-            <li><Link to="/exam-practice" onClick={() => setIsVUMenuOpen(false)}>Exam Practice</Link></li>
           </ul>
           <button 
             className={`vu-menu-toggle ${isVUMenuOpen ? 'active' : ''}`}
