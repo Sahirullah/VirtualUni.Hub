@@ -1818,17 +1818,14 @@
 }
 
 .results-sidebar {
-  order: -1;
   position: sticky;
-  top: 0;
+  top: 24px;
   height: fit-content;
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
+  max-height: calc(100vh - 280px);
 }
 
 .results-main {
-  padding: 24px;
-  order: 1;
+  padding: 0;
   overflow-y: auto;
   max-height: calc(100vh - 200px);
 }
@@ -1844,14 +1841,13 @@
 
   .results-sidebar {
     position: sticky;
-    top: 0;
+    top: 20px;
     height: fit-content;
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
+    max-height: calc(100vh - 240px);
   }
 
   .results-main {
-    padding: 20px;
+    padding: 0;
     overflow-y: auto;
     max-height: calc(100vh - 200px);
   }
@@ -1902,17 +1898,14 @@
   }
 
   .results-sidebar {
-    order: -1;
     position: sticky;
-    top: 0;
+    top: 16px;
     height: fit-content;
-    max-height: calc(100vh - 180px);
-    overflow-y: auto;
+    max-height: calc(100vh - 220px);
   }
 
   .results-main {
-    padding: 16px;
-    order: 1;
+    padding: 0;
     overflow-y: auto;
     max-height: calc(100vh - 180px);
   }
@@ -2035,14 +2028,13 @@
 
   .results-sidebar {
     position: sticky;
-    top: 0;
+    top: 12px;
     height: fit-content;
-    max-height: calc(100vh - 160px);
-    overflow-y: auto;
+    max-height: calc(100vh - 200px);
   }
 
   .results-main {
-    padding: 12px;
+    padding: 0;
     overflow-y: auto;
     max-height: calc(100vh - 160px);
   }
@@ -2175,14 +2167,13 @@
 
   .results-sidebar {
     position: sticky;
-    top: 0;
+    top: 10px;
     height: fit-content;
-    max-height: calc(100vh - 140px);
-    overflow-y: auto;
+    max-height: calc(100vh - 180px);
   }
 
   .results-main {
-    padding: 10px;
+    padding: 0;
     overflow-y: auto;
     max-height: calc(100vh - 140px);
   }
@@ -2328,14 +2319,13 @@
 
   .results-sidebar {
     position: sticky;
-    top: 0;
+    top: 8px;
     height: fit-content;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
+    max-height: calc(100vh - 160px);
   }
 
   .results-main {
-    padding: 8px;
+    padding: 0;
     overflow-y: auto;
     max-height: calc(100vh - 120px);
   }
@@ -2471,7 +2461,8 @@
 }
 
 .results-section {
-  margin-top: 30px;
+  margin-top: 0;
+  padding: 24px;
 }
 
 .results-section h2 {

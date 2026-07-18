@@ -12,12 +12,12 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('wolfexa-theme');
+    const savedTheme = localStorage.getItem('virtual-uni-hub-theme');
     return savedTheme === 'dark';
   });
 
   useEffect(() => {
-    localStorage.setItem('wolfexa-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('virtual-uni-hub-theme', isDarkMode ? 'dark' : 'light');
     
     if (isDarkMode) {
       document.documentElement.classList.add('dark-mode');
