@@ -185,12 +185,6 @@ const ExamPractice = () => {
             <h2>Select Exam Type</h2>
             <div className="exam-type-buttons">
               <button 
-                className={`exam-type-btn ${examType === 'exam' ? 'active' : ''}`}
-                onClick={() => { setExamType('exam'); setSelectedCategory('all'); }}
-              >
-                📋 Exam Practice
-              </button>
-              <button 
                 className={`exam-type-btn ${examType === 'midterm' ? 'active' : ''}`}
                 onClick={() => { setExamType('midterm'); setSelectedCategory('all'); }}
               >

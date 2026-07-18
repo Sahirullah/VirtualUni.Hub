@@ -62,10 +62,29 @@ export const finalTermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Algorithm Design', 'CS401'),
   },
+  {
+    id: 5,
+    code: 'CS606',
+    title: 'Advanced Web Development',
+    category: 'cs',
+    image: '💻',
+    questions: [
+      { question: "cs for ___________.", options: ['chemistry practical', 'computer science', 'construction payroll', 'common plate'], correct: 1 },
+      { question: "cs101 ___________.", options: ['chemistry practical', 'computer science', 'introduction to computing', 'common plate'], correct: 2 },
+      { question: "cs202 for ___________.", options: ['chemistry practical', 'computer science', 'construction payroll', 'front end development'], correct: 1 },
+      { question: "What is the main focus of web development?", options: ['Database design', 'User interface creation', 'Network security', 'Cloud computing'], correct: 1 },
+      { question: "Which language is essential for front-end development?", options: ['Python', 'JavaScript', 'Java', 'C++'], correct: 1 },
+      { question: "What does API stand for?", options: ['Application Programming Interface', 'Advanced Programming Input', 'Automated Processor Interface', 'Automatic Programming Implementation'], correct: 0 },
+      { question: "Which of these is a frontend framework?", options: ['Django', 'React', 'Laravel', 'Spring'], correct: 1 },
+      { question: "What is responsive design?", options: ['Design that changes colors', 'Design that works on all devices', 'Design with animations', 'Design with databases'], correct: 1 },
+      { question: "Which is a backend programming language?", options: ['HTML', 'CSS', 'PHP', 'JavaScript'], correct: 2 },
+      { question: "What is version control used for?", options: ['Managing project versions', 'Controlling user access', 'Managing databases', 'Storing images'], correct: 0 },
+    ],
+  },
 
   // Mathematics Courses
   {
-    id: 5,
+    id: 6,
     code: 'MTH101',
     title: 'Calculus and Analytical Geometry',
     category: 'mth',
@@ -73,7 +92,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Calculus and Analytical Geometry', 'MTH101'),
   },
   {
-    id: 6,
+    id: 7,
     code: 'MTH201',
     title: 'Discrete Mathematics',
     category: 'mth',
@@ -81,7 +100,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Discrete Mathematics', 'MTH201'),
   },
   {
-    id: 7,
+    id: 8,
     code: 'MTH301',
     title: 'Linear Algebra',
     category: 'mth',
@@ -91,7 +110,7 @@ export const finalTermExamPracticeData = [
 
   // English Courses
   {
-    id: 8,
+    id: 9,
     code: 'ENG101',
     title: 'English Composition',
     category: 'eng',
@@ -99,7 +118,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('English Composition', 'ENG101'),
   },
   {
-    id: 9,
+    id: 10,
     code: 'ENG201',
     title: 'Literature and Writing',
     category: 'eng',
@@ -109,7 +128,7 @@ export const finalTermExamPracticeData = [
 
   // Physics Courses
   {
-    id: 10,
+    id: 11,
     code: 'PHY101',
     title: 'Physics I',
     category: 'phy',
@@ -117,7 +136,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Physics I', 'PHY101'),
   },
   {
-    id: 11,
+    id: 12,
     code: 'PHY201',
     title: 'Physics II',
     category: 'phy',
@@ -127,7 +146,7 @@ export const finalTermExamPracticeData = [
 
   // Chemistry Courses
   {
-    id: 12,
+    id: 13,
     code: 'CHE101',
     title: 'General Chemistry',
     category: 'che',
@@ -135,7 +154,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('General Chemistry', 'CHE101'),
   },
   {
-    id: 13,
+    id: 14,
     code: 'CHE201',
     title: 'Organic Chemistry',
     category: 'che',
@@ -145,7 +164,7 @@ export const finalTermExamPracticeData = [
 
   // Business & Management Courses
   {
-    id: 14,
+    id: 15,
     code: 'BUS101',
     title: 'Introduction to Business',
     category: 'mgt',
@@ -153,7 +172,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Introduction to Business', 'BUS101'),
   },
   {
-    id: 15,
+    id: 16,
     code: 'BUS301',
     title: 'Business Management',
     category: 'mgt',
@@ -163,7 +182,7 @@ export const finalTermExamPracticeData = [
 
   // Statistics & Economics
   {
-    id: 16,
+    id: 17,
     code: 'STA301',
     title: 'Statistics and Probability',
     category: 'sta',
@@ -171,7 +190,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Statistics and Probability', 'STA301'),
   },
   {
-    id: 17,
+    id: 18,
     code: 'ECO101',
     title: 'Microeconomics',
     category: 'eco',
@@ -181,7 +200,7 @@ export const finalTermExamPracticeData = [
 
   // Islamic Studies
   {
-    id: 18,
+    id: 19,
     code: 'ISL101',
     title: 'Islamic Studies',
     category: 'isl',
@@ -191,7 +210,7 @@ export const finalTermExamPracticeData = [
 
   // Pakistan Studies
   {
-    id: 19,
+    id: 20,
     code: 'PAK101',
     title: 'Pakistan Studies',
     category: 'pak',

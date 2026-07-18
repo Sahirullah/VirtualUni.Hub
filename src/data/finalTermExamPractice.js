@@ -47,6 +47,8 @@ const generateCourseQuestions = (courseName) => {
   return questions;
 };
 
+ 
+
 export const finalTermExamPracticeData = [
   // ACC - Accounting
   { id: 1, code: 'ACC311', title: 'Fundamentals of Auditing', category: 'acc', image: '📊', questions: generateCourseQuestions('Auditing'), totalQuestions: 50 },
@@ -109,6 +111,7 @@ export const finalTermExamPracticeData = [
   // STA - Statistics
   { id: 150, code: 'STA301', title: 'Statistics', category: 'sta', image: '📊', questions: generateCourseQuestions('Statistics'), totalQuestions: 50 },
 ];
+
 
 
 export const finalTermCategories = [
