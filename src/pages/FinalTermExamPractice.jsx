@@ -163,6 +163,10 @@ const FinalTermPractice = () => {
             </div>
           </div>
 
+          <div className="category-filter" style={{ marginBottom: '30px' }}>
+            <h3 style={{ fontSize: '16px', marginBottom: '10px' }}>Available Courses</h3>
+          </div>
+
           <div className="exams-grid">
             {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
               <div key={exam.code} className="exam-card">
