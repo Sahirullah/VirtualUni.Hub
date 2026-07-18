@@ -252,7 +252,7 @@ const ExamPractice = () => {
 
           <div className="exams-grid">
             {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
-              <div key={exam.id} className="exam-card">
+              <div key={exam.code} className="exam-card">
                 <div className="card-header">
                   <div className="card-icon">{exam.image}</div>
                   <span className="status-badge">Exam Practice</span>

@@ -21,7 +21,7 @@ const MidtermFiles = () => {
       <div className="exam-hero">
         <div className="hero-content">
           <div className="hero-icon">📝</div>
-          <h1>Midterm Papers</h1>
+          <h1>Midterm Files & Past Papers</h1>
           <p>Download authentic VU midterm exam papers</p>
         </div>
       </div>
@@ -44,7 +44,7 @@ const MidtermFiles = () => {
 
         <div className="exams-grid">
           {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
-            <SubjectCard key={exam.id} exam={exam} />
+            <SubjectCard key={exam.code} exam={exam} />
           ))}
         </div>
 

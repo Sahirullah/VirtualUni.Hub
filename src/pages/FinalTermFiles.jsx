@@ -44,7 +44,7 @@ const FinalTermFiles = () => {
 
         <div className="exams-grid">
           {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
-            <SubjectCard key={exam.id} exam={exam} />
+            <SubjectCard key={exam.code} exam={exam} />
           ))}
         </div>
 
