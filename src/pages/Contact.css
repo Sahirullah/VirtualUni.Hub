@@ -7,7 +7,6 @@
   background: #f8f9fa;
 }
 
-/* Hero Section */
 .contact-hero {
   background: linear-gradient(135deg, #FF741F 0%, #e53e3e 100%);
   min-height: 60vh;
@@ -266,7 +265,7 @@
 
 .quick-link-card:hover {
   background: white;
-  border-color: #FF741F;
+  border-color: #2563EB;
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -274,7 +273,7 @@
 .quick-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #FF741F, #e53e3e);
+  background: linear-gradient(135deg, #2563EB, #DC2626);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -298,7 +297,7 @@
 }
 
 .quick-btn {
-  background: #FF741F;
+  background: #2563EB;
   color: white;
   text-decoration: none;
   padding: 12px 25px;
@@ -309,9 +308,9 @@
 }
 
 .quick-btn:hover {
-  background: #e53e3e;
+  background: #1D4ED8;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 116, 31, 0.3);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 /* FAQ Section */
@@ -382,7 +381,7 @@
 }
 
 .faq-question.active {
-  color: #FF741F;
+  color: #2563EB;
   font-weight: 600;
 }
 
@@ -398,7 +397,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: #FF741F;
+  color: #2563EB;
   transition: transform 0.3s ease;
 }
 

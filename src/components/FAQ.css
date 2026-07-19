@@ -18,14 +18,14 @@
 .faq-title {
   font-size: 42px;
   font-weight: 600;
-  color: #202124;
+  color: #2C3E50;
   margin: 0 0 16px 0;
   letter-spacing: -0.5px;
 }
 
 .faq-subtitle {
   font-size: 16px;
-  color: #5f6368;
+  color: #2C3E50;
   margin: 0;
   font-weight: 400;
   line-height: 1.5;
@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  border: 1px solid #dadce0;
+  border: 1px solid #ECEDEE;
   border-radius: 8px;
   overflow: hidden;
   background: white;
@@ -47,7 +47,7 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid #ECEDEE;
   transition: all 0.3s ease;
 }
 
@@ -72,17 +72,17 @@
   transition: all 0.2s ease;
   font-size: 16px;
   font-weight: 500;
-  color: #202124;
+  color: #2C3E50;
   text-align: left;
   font-family: inherit;
 }
 
 .faq-question:hover {
-  background-color: #f8f9fa;
+  background-color: #FFFFFF;
 }
 
 .faq-item.expanded .faq-question {
-  color: #1f73e7;
+  color: #FF741F;
   font-weight: 600;
 }
 
@@ -98,13 +98,13 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: #5f6368;
+  color: #64748B;
   transition: transform 0.3s ease, color 0.2s ease;
 }
 
 .faq-item.expanded .faq-icon {
   transform: rotate(180deg);
-  color: #1f73e7;
+  color: #2563EB;
 }
 
 .faq-icon svg {
@@ -116,7 +116,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  background-color: #f8f9fa;
+  background-color: #F8F9FA;
 }
 
 .faq-item.expanded .faq-answer {
@@ -127,7 +127,7 @@
 .faq-answer p {
   margin: 0;
   font-size: 15px;
-  color: #3c4043;
+  color: #475569;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -135,24 +135,24 @@
 .faq-footer {
   text-align: center;
   padding-top: 40px;
-  border-top: 1px solid #dadce0;
+  border-top: 1px solid #ECEDEE;
 }
 
 .faq-footer-text {
   font-size: 15px;
-  color: #5f6368;
+  color: #2C3E50;
   margin: 0;
 }
 
 .faq-footer-link {
-  color: #1f73e7;
+  color: #FF741F;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .faq-footer-link:hover {
-  color: #1557b0;
+  color: #e53e3e;
   text-decoration: underline;
 }
 

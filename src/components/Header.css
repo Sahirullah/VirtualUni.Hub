@@ -13,7 +13,7 @@ html {
 
 /* Top Bar */
 .top-bar {
-  background: #f8f9fa;
+  background: #FFFFFF;
   padding: 12px 0;
 }
 
@@ -90,7 +90,7 @@ html {
 .logo {
   font-size: 28px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #2C3E50;
   margin: 0;
   letter-spacing: -0.5px;
   line-height: 1.2;
@@ -133,7 +133,7 @@ html {
 
 .contact-value {
   font-size: 14px;
-  color: #333;
+  color: #2C3E50;
   font-weight: 600;
 }
 

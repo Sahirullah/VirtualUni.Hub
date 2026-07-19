@@ -1,7 +1,7 @@
 /* Main Page */
 .exam-practice-page {
-  background: #ffffff;
-  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #FFFFFF;
   min-height: 100vh;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -10,13 +10,13 @@
 }
 
 .exam-practice-page.dark-mode {
-  background: #1a1a1a;
-  color: #ecf0f1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #FFFFFF;
 }
 
 /* Hero Section */
 .exam-hero {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #c1272d 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 60px 20px;
   text-align: center;
   color: white;
@@ -29,6 +29,15 @@
   font-weight: 700;
   margin: 0 0 10px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.exam-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .exam-hero p {
@@ -47,13 +56,13 @@
 }
 
 .filter-btn {
-  padding: 4px 5px;
+  padding: 8px 12px;
   border: none;
-  background: rgba(6, 145, 252, 0.6);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -62,13 +71,14 @@
 }
 
 .filter-btn:hover {
-  background: rgba(6, 145, 252, 0.8);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
 }
 
 .filter-btn.active {
-  background: rgba(6, 145, 252, 0.9);
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.5);
+  background: #10B981;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
 }
 
 
@@ -88,13 +98,13 @@
 
 .exam-type-filter h2 {
   font-size: 28px;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 25px;
   font-weight: 600;
 }
 
 .exam-practice-page.dark-mode .exam-type-filter h2 {
-  color: #ecf0f1;
+  color: #ffffff;
 }
 
 .exam-type-buttons {
@@ -107,9 +117,9 @@
 
 .exam-type-btn {
   padding: 14px 32px;
-  border: 2px solid #ddd;
+  border: 2px solid #E2E8F0;
   background: white;
-  color: #333;
+  color: #2C3E50;
   border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
@@ -120,21 +130,21 @@
   gap: 10px;
   min-width: 200px;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px #ECEDEE;
 }
 
 .exam-type-btn:hover {
-  border-color: #0691FC;
-  background: #f0f8ff;
+  border-color: #FF741F;
+  background: #FFFAF5;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 116, 31, 0.2);
 }
 
 .exam-type-btn.active {
-  background: linear-gradient(135deg, #0691FC 0%, #0470c9 100%);
+  background: linear-gradient(135deg, #FF741F 0%, #ff8c42 100%);
   color: white;
-  border-color: #0470c9;
-  box-shadow: 0 4px 16px rgba(6, 145, 252, 0.4);
+  border-color: #ff8c42;
+  box-shadow: 0 4px 16px rgba(255, 116, 31, 0.4);
   font-weight: 700;
 }
 
@@ -157,13 +167,13 @@
 
 .category-filter h2 {
   font-size: 28px;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
 .exam-practice-page.dark-mode .category-filter h2 {
-  color: #ecf0f1;
+  color: #ffffff;
 }
 
 /* Exams Grid */
@@ -175,11 +185,11 @@
 }
 
 .exam-card {
-  background: transparent;
-  border: 2px solid #0691FC;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px #ECEDEE;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -190,15 +200,15 @@
 }
 
 .exam-practice-page.dark-mode .exam-card {
-  background: rgba(42, 42, 42, 0.3);
-  border-color: #0691FC;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .exam-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(6, 145, 252, 0.25);
-  border-color: #0470c9;
+  box-shadow: 0 12px 25px #ECEDEE;
+  border-color: #10b981;
 }
 
 .card-header {
@@ -215,12 +225,12 @@
   font-size: 50px;
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #4a9eff 0%, #2d7fd9 100%);
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .status-badge {
@@ -241,39 +251,39 @@
 
 .card-body h3 {
   font-size: 18px;
-  color: #0691FC;
+  color: #FFFFFF;
   margin: 0;
   font-weight: 700;
 }
 
 .exam-practice-page.dark-mode .card-body h3 {
-  color: #5ab3ff;
+  color: #FFFFFF;
 }
 
 .card-body h4 {
   font-size: 14px;
-  color: #ecf0f1;
+  color: #FFFFFF;
   margin: 0;
   font-weight: 500;
   line-height: 1.4;
-  border-bottom: 2px dashed #666;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
   padding-bottom: 10px;
 }
 
 .exam-practice-page.dark-mode .card-body h4 {
-  color: #ecf0f1;
-  border-bottom-color: #555;
+  color: #FFFFFF;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
 .card-body p {
   font-size: 14px;
-  color: #ecf0f1;
+  color: #FFFFFF;
   margin: 0;
   line-height: 1.6;
 }
 
 .exam-practice-page.dark-mode .card-body p {
-  color: #aaa;
+  color: #FFFFFF;
 }
 
 .card-footer {
@@ -293,11 +303,11 @@
 }
 
 .feature-tag {
-  background: #f0f0f0;
+  background: #F0F0F0;
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 12px;
-  color: #666;
+  color: #475569;
 }
 
 .exam-practice-page.dark-mode .feature-tag {
@@ -306,7 +316,7 @@
 }
 
 .start-exam-btn {
-  background: linear-gradient(135deg, #0691FC 0%, #0470c9 100%);
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -320,7 +330,7 @@
 
 .start-exam-btn:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
 }
 
 .no-results {
@@ -338,13 +348,13 @@
 
 .exam-type-filter h2 {
   font-size: 28px;
-  color: #333;
+  color: #0F172A;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
 .exam-practice-page.dark-mode .exam-type-filter h2 {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .exam-type-buttons {
@@ -356,9 +366,9 @@
 
 .exam-type-btn {
   padding: 12px 24px;
-  border: 2px solid #0691FC;
-  background: white;
-  color: #0691FC;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
@@ -368,31 +378,31 @@
 }
 
 .exam-practice-page.dark-mode .exam-type-btn {
-  background: #2a2a2a;
-  color: #0691FC;
-  border-color: #0691FC;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .exam-type-btn:hover {
-  background: #f0f8ff;
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .exam-practice-page.dark-mode .exam-type-btn:hover {
-  background: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .exam-type-btn.active {
-  background: linear-gradient(135deg, #0691FC 0%, #0470c9 100%);
-  color: white;
-  border-color: #0470c9;
-  box-shadow: 0 4px 12px rgba(6, 145, 252, 0.4);
+  background: #10B981;
+  color: #FFFFFF;
+  border-color: #10B981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
 }
 
 .exam-type-btn.active:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(6, 145, 252, 0.5);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.6);
 }
 
 /* Responsive - Desktop & Tablets */
@@ -1232,7 +1242,7 @@
 
 /* Header Bar */
 .exam-header-bar {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #232B39 0%, #1a1f2e 100%);
   color: white;
   padding: 15px 30px;
   display: flex;
@@ -1255,8 +1265,8 @@
 }
 
 .timer-circle {
-  background: #1a252f;
-  border: 3px solid #3498db;
+  background: #232B39;
+  border: 3px solid #FF741F;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -1265,13 +1275,13 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 116, 31, 0.3);
   transition: all 0.3s ease;
 }
 
 .timer-circle.critical {
-  border-color: #e74c3c;
-  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.5);
+  border-color: #DC2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.5);
   animation: pulse-critical 1s infinite;
 }
 
@@ -1287,21 +1297,21 @@
 
 .timer-value {
   font-size: 16px;
-  color: #3498db;
+  color: #FF741F;
 }
 
 .timer-circle.critical .timer-value {
-  color: #e74c3c;
+  color: #DC2626;
 }
 
 /* Info Bar */
 .exam-info-bar {
-  background: white;
+  background: #FFFFFF;
   padding: 12px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 2px solid #ECEDEE;
   font-size: 14px;
   font-weight: 500;
 }
@@ -1312,12 +1322,12 @@
 }
 
 .question-no {
-  color: #2c3e50;
+  color: #2C3E50;
   font-weight: 600;
 }
 
 .exam-practice-page.dark-mode .question-no {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .right-section {
@@ -1327,10 +1337,10 @@
 }
 
 .marks {
-  background: #f0f0f0;
+  background: #F0F0F0;
   padding: 6px 12px;
   border-radius: 4px;
-  color: #555;
+  color: #2C3E50;
   font-weight: 600;
 }
 
@@ -1340,7 +1350,7 @@
 }
 
 .summary-btn {
-  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -1353,7 +1363,7 @@
 
 .summary-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* Exam Wrapper */
@@ -1367,10 +1377,10 @@
 
 .exam-main {
   flex: 1;
-  background: white;
+  background: #FFFFFF;
   border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px #ECEDEE;
   overflow-y: auto;
 }
 
@@ -1386,13 +1396,13 @@
 .question {
   font-size: 16px;
   line-height: 1.8;
-  color: #2c3e50;
+  color: #2C3E50;
   margin: 0;
   font-weight: 500;
 }
 
 .exam-practice-page.dark-mode .question {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .answer-section {
@@ -1402,7 +1412,7 @@
 .answer-section h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #2C3E50;
   margin: 0 0 15px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1418,11 +1428,11 @@
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #ECEDEE;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: #fafafa;
+  background: #FFFFFF;
 }
 
 .exam-practice-page.dark-mode .option-label {
@@ -1431,8 +1441,8 @@
 }
 
 .option-label:hover {
-  border-color: #3498db;
-  background: #f0f8ff;
+  border-color: #FF741F;
+  background: #FFFAF5;
 }
 
 .exam-practice-page.dark-mode .option-label:hover {
@@ -1444,26 +1454,26 @@
   cursor: pointer;
   width: 18px;
   height: 18px;
-  accent-color: #3498db;
+  accent-color: #FF741F;
 }
 
 .option-text {
   font-size: 14px;
-  color: #333;
+  color: #2C3E50;
   flex: 1;
 }
 
 .exam-practice-page.dark-mode .option-text {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 /* Sidebar */
 .exam-sidebar {
   width: 280px;
-  background: white;
+  background: #FFFFFF;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px #ECEDEE;
   overflow-y: auto;
 }
 
@@ -1475,7 +1485,7 @@
 .summary-panel h4 {
   font-size: 14px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #2C3E50;
   margin: 0 0 15px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -1490,10 +1500,10 @@
 
 .question-btn {
   aspect-ratio: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #ECEDEE;
   border-radius: 3px;
-  background: white;
-  color: #666;
+  background: #FFFFFF;
+  color: #2C3E50;
   font-size: 9px;
   font-weight: 600;
   cursor: pointer;
@@ -1514,9 +1524,9 @@
 }
 
 .question-btn:hover {
-  border-color: #3498db;
-  background: #ecf8ff;
-  color: #3498db;
+  border-color: #FF741F;
+  background: #FFFAF5;
+  color: #FF741F;
 }
 
 .exam-practice-page.dark-mode .question-btn:hover {
@@ -1524,32 +1534,32 @@
 }
 
 .question-btn.answered {
-  background: #2ecc71;
-  border-color: #27ae60;
+  background: #22C55E;
+  border-color: #16A34A;
   color: white;
   font-weight: 700;
 }
 
 .question-btn.flagged {
-  background: #e74c3c;
-  border-color: #c0392b;
+  background: #DC2626;
+  border-color: #991B1B;
   color: white;
   font-weight: 700;
 }
 
 .question-btn.active {
-  border-color: #3498db;
-  background: #3498db;
+  border-color: #FF741F;
+  background: #FF741F;
   color: white;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 116, 31, 0.4);
 }
 
 .stats {
-  background: #f8f9fa;
+  background: #F8F9FA;
   border-radius: 6px;
   padding: 15px;
-  border-top: 2px solid #ecf0f1;
+  border-top: 2px solid #E2E8F0;
   margin-top: 15px;
 }
 
@@ -1562,7 +1572,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #555;
+  color: #475569;
   margin-bottom: 8px;
   font-weight: 500;
 }
@@ -1577,12 +1587,12 @@
 
 .stat-row span:last-child {
   font-weight: 700;
-  color: #2c3e50;
+  color: #0F172A;
 }
 
 /* Footer */
 .exam-footer {
-  background: #2c3e50;
+  background: #232B39;
   padding: 15px 30px;
   display: flex;
   gap: 10px;
@@ -1611,39 +1621,39 @@
 }
 
 .first-btn, .prev-btn, .next-btn, .last-btn {
-  background: #3498db;
+  background: #FF741F;
   color: white;
 }
 
 .first-btn:hover:not(:disabled), .prev-btn:hover:not(:disabled), .next-btn:hover:not(:disabled), .last-btn:hover:not(:disabled) {
-  background: #2980b9;
+  background: #e53e3e;
   transform: translateY(-2px);
 }
 
 .flag-btn {
-  background: #e67e22;
+  background: #F59E0B;
   color: white;
 }
 
 .flag-btn:hover {
-  background: #d35400;
+  background: #D97706;
 }
 
 .flag-btn.active {
-  background: #e74c3c;
+  background: #DC2626;
 }
 
 .save-btn {
-  background: #95a5a6;
+  background: #64748B;
   color: white;
 }
 
 .save-btn:hover:not(:disabled) {
-  background: #7f8c8d;
+  background: #475569;
 }
 
 .save-btn.highlight {
-  background: #f39c12;
+  background: #10B981;
   animation: pulse 1.5s infinite;
 }
 
@@ -1653,7 +1663,7 @@
 }
 
 .finish-btn {
-  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: white;
 }
 
@@ -1664,7 +1674,7 @@
 
 /* Score Card */
 .score-card {
-  color: #333;
+  color: #2C3E50;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1676,20 +1686,20 @@
 }
 
 .exam-practice-page.dark-mode .score-card {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .score-title {
   font-size: 16px;
   font-weight: 700;
   margin: 0;
-  color: #333;
+  color: #2C3E50;
   text-align: center;
   display: block;
 }
 
 .exam-practice-page.dark-mode .score-title {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .score-circle-container {
@@ -1717,18 +1727,18 @@
   position: relative;
   font-size: 32px;
   font-weight: 900;
-  color: #1a1a1a;
+  color: #2C3E50;
   text-align: center;
   line-height: 1;
 }
 
 .exam-practice-page.dark-mode .score-percentage {
-  color: #ecf0f1;
+  color: #FFFFFF;
 }
 
 .score-summary {
   font-size: 13px;
-  color: #333;
+  color: #2C3E50;
   text-align: center;
   margin: 0;
   line-height: 1.5;
@@ -1757,7 +1767,7 @@
 .breakdown-number {
   font-size: 24px;
   font-weight: 900;
-  color: #333;
+  color: #2C3E50;
   letter-spacing: -1px;
   margin: 0;
 }
@@ -1775,19 +1785,19 @@
 }
 
 .breakdown-item-circle.correct {
-  background: #4caf50;
+  background: #22C55E;
   color: white;
 }
 
 .breakdown-item-circle.wrong {
-  background: #f44336;
+  background: #DC2626;
   color: white;
 }
 
 .restart-btn-new {
-  background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
-  color: #333;
-  border: 2px solid #333;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: 2px solid #ffffff;
   padding: 12px 40px;
   border-radius: 12px;
   cursor: pointer;
@@ -1799,7 +1809,7 @@
   max-width: 280px;
   text-align: center;
   text-transform: capitalize;
-  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .restart-btn-new:hover {
