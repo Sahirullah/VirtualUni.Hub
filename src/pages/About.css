@@ -116,7 +116,7 @@
 .section-title {
   font-size: 36px;
   font-weight: 800;
-  color: #2d3748;
+  color: #2C3E50;
   margin-bottom: 24px;
   letter-spacing: -0.5px;
 }
@@ -124,7 +124,7 @@
 .mission-description {
   font-size: 16px;
   line-height: 1.7;
-  color: #4a5568;
+  color: #475569;
   margin-bottom: 20px;
 }
 
@@ -151,13 +151,13 @@
 .stat-number {
   font-size: 32px;
   font-weight: 800;
-  color: #FF741F;
+  color: #2563EB;
   margin-bottom: 8px;
 }
 
 .stat-label {
   font-size: 14px;
-  color: #718096;
+  color: #64748B;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -213,7 +213,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FF741F, #ff8c42);
+  background: linear-gradient(90deg, #2563EB, #1D4ED8);
   border-radius: 16px 16px 0 0;
   transform: scaleX(0);
   transition: transform 0.3s ease;
