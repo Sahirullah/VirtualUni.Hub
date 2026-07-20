@@ -296,99 +296,115 @@ const ExamPractice = () => {
             </div>
           </div>
 
-          <div className="exam-wrapper results-wrapper">
-            <div className="exam-main results-main">
-              <div className="results-section">
-                <h2>Detailed Results Review</h2>
-                {correctAnswers.length > 0 && (
-                  <div className="results-group correct-group">
-                    <h3>✓ Correct Answers ({correctAnswers.length})</h3>
-                    <div className="results-list">
-                      {correctAnswers.map((result, idx) => (
-                        <div key={idx} className="result-item correct">
-                          <div className="result-header">
-                            <span className="result-number">Q{result.index + 1}</span>
-                            <span className="result-badge">✓ Correct</span>
-                          </div>
-                          <div className="result-question">{result.question.question}</div>
-                          <div className="result-answer">
-                            <span className="answer-label">Your Answer:</span>
-                            <span className="answer-text">{result.question.options[result.userAnswer]}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {wrongAnswers.length > 0 && (
-                  <div className="results-group wrong-group">
-                    <h3>✗ Wrong Answers ({wrongAnswers.length})</h3>
-                    <div className="results-list">
-                      {wrongAnswers.map((result, idx) => (
-                        <div key={idx} className="result-item wrong">
-                          <div className="result-header">
-                            <span className="result-number">Q{result.index + 1}</span>
-                            <span className="result-badge">✗ Incorrect</span>
-                          </div>
-                          <div className="result-question">{result.question.question}</div>
-                          <div className="result-answer">
-                            <span className="answer-label">Your Answer:</span>
-                            <span className="answer-text incorrect">{result.question.options[result.userAnswer]}</span>
-                          </div>
-                          <div className="result-answer">
-                            <span className="answer-label">Correct Answer:</span>
-                            <span className="answer-text correct-highlight">{result.question.options[result.correctAnswer]}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+          <div className="results-container">
+            <div className="results-header-section">
+              <h2>Exam Results</h2>
+              <p className="results-subtitle">Congratulations! You've completed the exam</p>
             </div>
 
-            <div className="exam-sidebar results-sidebar">
-              <div className="score-card">
-                <h3 className="score-title">Your Score</h3>
-                
-                <div className="score-circle-container">
-                  <svg className="score-circle-border" viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="90" className="circle-border" />
-                  </svg>
-                  <div className="score-percentage">{percentage}%</div>
-                </div>
+            <div className="results-wrapper-main">
+              <div className="results-detailed-section">
+                <div className="results-tabs">
+                  <div className="results-group">
+                    {correctAnswers.length > 0 && (
+                      <div className="results-group-section correct-group">
+                        <div className="results-group-header">
+                          <h3>Result Details ({correctAnswers.length})</h3>
+                        </div>
+                        <div className="results-list">
+                          {correctAnswers.map((result, idx) => (
+                            <div key={idx} className="result-item correct">
+                              <div className="result-header">
+                                <span className="result-number">Q{result.index + 1}</span>
+                                <span className="result-badge">✓ Correct</span>
+                              </div>
+                              <div className="result-question">{result.question.question}</div>
+                              <div className="result-answer">
+                                <span className="answer-label">Your Answer:</span>
+                                <span className="answer-text">{result.question.options[result.userAnswer]}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
-                <p className="score-summary">
-                  you got {score} out of {savedCount}
-                </p>
-
-                <div className="score-breakdown-visual">
-                  <div className="breakdown-display">
-                    <span className="breakdown-number">{String(score).padStart(2, '0')}</span>
-                    <div className="breakdown-item-circle correct">
-                      <svg className="checkmark" viewBox="0 0 24 24">
-                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="white" />
-                      </svg>
-                    </div>
+                    {wrongAnswers.length > 0 && (
+                      <div className="results-group-section wrong-group">
+                        <div className="results-group-header">
+                          <h3>✗ Incorrect Answers ({wrongAnswers.length})</h3>
+                        </div>
+                        <div className="results-list">
+                          {wrongAnswers.map((result, idx) => (
+                            <div key={idx} className="result-item wrong">
+                              <div className="result-header">
+                                <span className="result-number">Q{result.index + 1}</span>
+                                <span className="result-badge">✗ Incorrect</span>
+                              </div>
+                              <div className="result-question">{result.question.question}</div>
+                              <div className="result-answers-comparison">
+                                <div className="result-answer your-answer">
+                                  <span className="answer-label">Your Answer:</span>
+                                  <span className="answer-text incorrect">{result.question.options[result.userAnswer]}</span>
+                                </div>
+                                <div className="result-answer correct-answer">
+                                  <span className="answer-label">Correct Answer:</span>
+                                  <span className="answer-text correct-highlight">{result.question.options[result.correctAnswer]}</span>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
+                </div>
+              </div>
+
+              <div className="results-score-sidebar">
+                <div className="score-card-main">
+                  <h3 className="score-title">Your Score</h3>
                   
-                  <div className="breakdown-display">
-                    <span className="breakdown-number">{String(wrongCount).padStart(2, '0')}</span>
-                    <div className="breakdown-item-circle wrong">
-                      <svg className="cross-mark" viewBox="0 0 24 24">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="white" />
-                      </svg>
+                  <div className="score-circle-container">
+                    <svg className="score-circle-border" viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="90" className="circle-border" />
+                    </svg>
+                    <div className="score-percentage">{percentage}%</div>
+                  </div>
+
+                  <p className="score-summary">
+                    You got <strong>{score} out of {savedCount}</strong> questions correct
+                  </p>
+
+                  <div className="score-breakdown-visual">
+                    <div className="breakdown-display">
+                      <div className="breakdown-item-circle correct">
+                        <svg className="checkmark" viewBox="0 0 24 24">
+                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="white" />
+                        </svg>
+                      </div>
+                      <span className="breakdown-number">{String(score).padStart(2, '0')}</span>
+                      <span className="breakdown-label">Correct</span>
+                    </div>
+                    
+                    <div className="breakdown-display">
+                      <div className="breakdown-item-circle wrong">
+                        <svg className="cross-mark" viewBox="0 0 24 24">
+                          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="white" />
+                        </svg>
+                      </div>
+                      <span className="breakdown-number">{String(wrongCount).padStart(2, '0')}</span>
+                      <span className="breakdown-label">Incorrect</span>
                     </div>
                   </div>
-                </div>
 
-                <button
-                  className="restart-btn-new"
-                  onClick={handleRestart}
-                >
-                  Take Another Exam
-                </button>
+                  <button
+                    className="restart-btn-new"
+                    onClick={handleRestart}
+                  >
+                    Take Another Exam
+                  </button>
+                </div>
               </div>
             </div>
           </div>
