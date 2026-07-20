@@ -2851,6 +2851,7 @@
   align-items: stretch;
   position: sticky;
   top: 20px;
+  height: fit-content;
 }
 
 .score-card-main {
@@ -2863,8 +2864,6 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  position: sticky;
-  top: 20px;
 }
 
 .exam-practice-page.dark-mode .score-card-main {
@@ -3040,11 +3039,11 @@
 }
 
 .correct-group .results-group-header h3 {
-  color: #22C55E;
+  color: #f7f7f7;
 }
 
 .wrong-group .results-group-header h3 {
-  color: #DC2626;
+  color: #f4f1f1;
 }
 
 .results-list {
@@ -3254,14 +3253,21 @@
     gap: 25px;
   }
 
+  .results-detailed-section {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+
   .results-score-sidebar {
     order: -1;
+    position: static;
+    top: auto;
   }
 
   .score-card-main {
     padding: 25px;
     gap: 15px;
-    position: static;
   }
 
   .score-percentage {
