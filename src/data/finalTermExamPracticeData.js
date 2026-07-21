@@ -65,14 +65,19 @@ export const finalTermExamPracticeData = [
 
 //506
   {
-    id: 4,
+    id: 5,
     code: 'CS506',
     title: 'Algorithm Design',
     category: 'cs',
     image: '💻',
-    questions: [
+    questions: [//07 
     { question: "Which of the following choices is the best choice as a controller in MVC Model Architecture? ", options: ["JSP", "Servlet", "JAVA", 'JavaScript'], correct: 1 },
+    { question: "Which of the following methods is an HttpServletResponse method?  ", options: ["getProtocol()", "setContentType(String) ", "setAttribute(String, Object) ", 'getMethod() '], correct: 1 },
+    { question: "Which of the following is/are true about Bean class? ", options: ["It must be serializable", "It should not have any public instance variables.", "It must have a zero argument constructor. ", 'All of the given options.'], correct: 3 },
     { question:"________ is a panel that allows interaction with a Java program. ", options: ["JPanel", "Frame",'Applet', "Both Frame and JPanel"], correct: 2 },
+    { question:"Which of the following tags is used for defining the initialization parameter of a servlet? ", options: ["<init-param></init-param> ", "<context-param></context-param>",'<servlet-param></servlet-param>', "<param></param>"], correct: 0 },
+    { question:"To destroy the session in Servlet we use:", options: ["session.destroy()", "session.invalidate()",'session.kill()', "session.end()"], correct: 1 },
+    { question:"Which one of the following options is NOT correct regarding the Data Layer in a 3-Layered Architecture? ", options: [" Communicate with database ", " Communicate with XML ",'Communicate with users', "Communicate with external services "], correct: 2 },
   ],
 },
 
