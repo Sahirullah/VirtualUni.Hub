@@ -62,6 +62,21 @@ export const finalTermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Algorithm Design', 'CS401'),
   },
+
+//506
+  {
+    id: 4,
+    code: 'CS506',
+    title: 'Algorithm Design',
+    category: 'cs',
+    image: '💻',
+    questions: [
+    { question: "Which of the following choices is the best choice as a controller in MVC Model Architecture? ", options: ["JSP", "Servlet", "JAVA", 'JavaScript'], correct: 1 },
+    { question:"________ is a panel that allows interaction with a Java program. ", options: ["JPanel", "Frame",'Applet', "Both Frame and JPanel"], correct: 2 },
+  ],
+},
+
+// cs606
   {
     id: 5,
     code: 'CS606',
