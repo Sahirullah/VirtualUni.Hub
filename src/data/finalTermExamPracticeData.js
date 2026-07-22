@@ -310,8 +310,17 @@ export const finalTermExamPracticeData = [
   { "question": "What is the sum of the series 1^2 + 2^2 + 3^2 + ... + n^2?", "options": ["[n(n + 1)(2n + 1)] / 6", "[2n(n + 1)(2n + 1)] / 6", "[(n + 1)(n + 2)] / 2", "n(n + 1) / 2"], "correct": 0 },
   { "question": "The value of ∑_(k=1)^n (k^3 / 2) is equal to:", "options": ["[n(n + 1)]^2 / 8", "[n(n + 1)] / 4", "[n(n + 1)(2n + 1)] / 12", "[n(n + 1)(2n + 1)] / 6"], "correct": 0 },
   { "question": "Let y = (2/3)(x^2 - 1)^(3/2) for 0 <= x <= 1. Which integral represents the arc length of the curve?", "options": ["L = ∫[0 to 1] sqrt(1 + [d/dx ((2/3)(x^2 - 1)^(3/2))]^2) dx", "L = ∫[0 to 1] (2/3)(x^2 - 1)^(3/2) dx", "L = ∫[0 to 1] sqrt(1 + (2/3)(x^2 - 1)^(3/2)) dx", "L = ∫[0 to 1] d/dx ((2/3)(x^2 - 1)^(3/2)) dx"], "correct": 0 },
-  { "question": "If f(x) = e^(-x) evaluated at x = 0 is expanded into a Taylor series, it is also specifically called a:", "options": ["Arithmetic series", "Maclaurin series", "Geometric series", "Harmonic series"], "correct": 1 }
-  
+  { "question": "If f(x) = e^(-x) evaluated at x = 0 is expanded into a Taylor series, it is also specifically called a:", "options": ["Arithmetic series", "Maclaurin series", "Geometric series", "Harmonic series"], "correct": 1 },
+  { "question": "If integral of 'f(x)' from [-1,2] = 4 and integral of 'g(x)' from [-1,2] = 8, then integral of (2f(x) + 3g(x)) from [-1,2] = ........", "options": ["38", "30", "36", "32"], "correct": 3 },
+  { "question": "Derivative of f(x) = a - 7, where a is a constant is....", "options": ["0", "a - 7", "-7", "a"], "correct": 0 },
+  { "question": "The volume of cylindrical shell for R = 2, r = 1 and h = 2 is -------------", "options": ["6*pi", "4*pi", "5*pi", "3*pi"], "correct": 0 },
+  { "question": "If the integral of f(x) = x + 1 from x = 2 to x = 3 is 7 / 2, then the integral of f(x) = x + 1 from x = 3 to x = 2 is ----------.", "options": ["5 / 2", "7 / 2", "None of these", "-7 / 2"], "correct": 3 },
+  { "question": "If 'f' is a continuous function on [a,b] then ∫[a to b] f(x) dx = ________.", "options": ["-∫[a to b] f(x) dx", "∫[b to b] f(x) dx", "-∫[b to a] f(x) dx", "-∫[c to a] f(x) dx"], "correct": 2 },
+  { "question": "If the solid is revolved around the x-axis and generates a solid with a circular cross section of radius f(x) at x. Then the area of this cross section is", "options": ["[f(x)]^2", "π r [f(x)]^3", "π [f(x)]^2", "π [f(x)]"], "correct": 2 },
+  { "question": "The value of ∫[0 to x] t^3 dt = ________.", "options": ["t^4 / 4", "(t^4 / 4) - 1", "None of the above", "x^4 / 4"], "correct": 3 },
+  { "question": "If f(x) = 3x^2 then F(x) (antiderivative of f) will be", "options": ["x^3 + 2", "6x", "x^3 + c", "6x + c"], "correct": 2 },
+  { "question": "If f(x) = sqrt(x), then ∫[1 to 2] π [f(x)]^2 dx is ------------", "options": ["7π / 2", "3π / 2", "5π / 2", "π / 2"], "correct": 1 },
+  { "question": "The volume of solid obtained when the region under the curve x = y over the interval [1,4] is revolved about the y-axis is", "options": ["V = ∫[1 to 4] π y dy", "V = ∫[1 to 4] π dx", "V = ∫[1 to 4] π y^2 dy", "V = ∫[1 to 4] y^2 dy"], "correct": 2 }
 ]},
 
   {
