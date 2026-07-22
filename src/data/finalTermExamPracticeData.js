@@ -360,7 +360,13 @@ export const finalTermExamPracticeData = [
   { "question": "If the function f(x)= (x^2)+1 satisfies all the conditions of Rolle’s theorem in the interval [-1,1] , then the value of ‘c’ will be……..", "options": ["4", "3", "0", "2"], "correct": 2 },
   { "question": "Which of the following will be left end points if the interval [-2,2] is divided into 4 equal subintervals.", "options": ["-2,-1,1,2", "None of these", "-1,0,1,2", "-2,-1,0,1"], "correct": 3 },
   { "question": "What is the estimated area under f(x) = 2x from x = 0 to x = 4 with right end points for n = 2?", "options": ["18", "8", "10", "24"], "correct": 3 },
-  { "question": "The indefinite integral of 5sinx is ……….", "options": ["-5cosx+c", "-cosx/5+c", "5cosx +c", "cosx/5"], "correct": 0 }
+  { "question": "The indefinite integral of 5sinx is ……….", "options": ["-5cosx+c", "-cosx/5+c", "5cosx +c", "cosx/5"], "correct": 0 },
+  { "question": "Mathematically second fundamental theorem of calculus can be written as,", "options": ["d/dx ∫[a to x] f(t)dt = f(x)", "None of these", "d/dx ∫[a to x] f(t)dt = f'(x)", "d/dx ∫[a to x] f(t)dt = f(t)"], "correct": 0 },
+  { "question": "Evaluate d/dx ∫[2 to x] t dt", "options": ["x^3", "None of these", "x", "x^2"], "correct": 2 },
+  { "question": "If the interval [3,7] is divided into '4' equal subintervals ,then left endpoint of each subinterval will be........", "options": ["4,5,6,7", "5,6,7,8", "3,4,5,6", "3,6,8,9"], "correct": 2 },
+  { "question": "Definite integral indicating the arc length of the curve y = x^2 between x = 0 and x = 2 is . . . . . . . .", "options": ["L = ∫[0 to 2] x dx", "None of these.", "L = ∫[0 to 2] sqrt(1 + 4x^2) dx", "L = ∫[0 to 2] sqrt(1 + 2x^2) dx"], "correct": 2 },
+  { "question": "Arc length of the curve y=1 from x=0 to x=1 is........", "options": ["2", "0", "-1", "1"], "correct": 3 },
+  { "question": "The value of ∫[1 to 2] dx = ________.", "options": ["0", "2", "1", "3"], "correct": 2 }
 ]},
 
   {
