@@ -10,9 +10,13 @@ const FinalTermFiles = () => {
   const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
+  const exams = allFinalTermData.map(item => ({
+    ...item
+  })).sort((a, b) => a.code.localeCompare(b.code));
+
   const filteredExams = selectedCategory === 'all'
-    ? allFinalTermData
-    : allFinalTermData.filter(exam => exam.category === selectedCategory);
+    ? exams
+    : exams.filter(exam => exam.category === selectedCategory);
 
   return (
     <div className={`exam-practice-page ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -43,8 +47,8 @@ const FinalTermFiles = () => {
         </div>
 
         <div className="exams-grid">
-          {filteredExams.sort((a, b) => a.code.localeCompare(b.code)).map(exam => (
-            <SubjectCard key={exam.code} exam={exam} />
+          {filteredExams.map((exam, index) => (
+            <SubjectCard key={`${exam.code}-${index}`} exam={exam} />
           ))}
         </div>
 
