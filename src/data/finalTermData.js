@@ -1260,7 +1260,7 @@ export const finalTermDataPart4 = [
 
   { id: 177, code: 'MTH101', title: 'Calculus and Analytical Geometry', category: 'mth', image: '📐', links:[
     'https://drive.google.com/file/d/1JIcsuEW5KRnNdbrag4LaIF00z9psuEWz/view?usp=sharing',
-    'https://docs.google.com/document/d/1WnNusBBBR_2kugACeJ8ATfOCYgF35xSW/edit?usp=sharing&ouid=114958120571553419825&rtpof=true&sd=true',
+    //'https://docs.google.com/document/d/1WnNusBBBR_2kugACeJ8ATfOCYgF35xSW/edit?usp=sharing&ouid=114958120571553419825&rtpof=true&sd=true',
     'https://drive.google.com/file/d/158jKEKtewZW0W6JxScDGJxIqXyvQ4Wiu/view?usp=sharing',
     'https://drive.google.com/file/d/1dxT90Ib6JYoA-wUTgxhuV9NC4fcZMaNJ/view?usp=sharing',
     'https://drive.google.com/file/d/13Sc9QGncWz60HrqjBgE_ui1HtvA-7eNF/view?usp=sharing',
