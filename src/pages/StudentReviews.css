@@ -55,20 +55,21 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background: white;
-  color: #667eea;
+  background: #FF741F;
+  color: white;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .sort-btn:hover, .filter-btn:hover {
+  background: #ff8c42;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(255, 116, 31, 0.3);
 }
 
 .sort-btn.active, .filter-btn.active {
-  background: #667eea;
+  background: #FF741F;
   color: white;
 }
 

@@ -105,24 +105,25 @@
 
 .filter-btn {
   padding: 10px 20px;
-  border: 2px solid #ddd;
-  background: white;
+  border: 2px solid #FF741F;
+  background: #FF741F;
   border-radius: 25px;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.3s ease;
-  color: #333;
+  color: white;
 }
 
 .filter-btn:hover {
-  border-color: #764ba2;
-  color: #764ba2;
+  border-color: #ff8c42;
+  background: #ff8c42;
+  color: white;
 }
 
 .filter-btn.active {
-  background: #764ba2;
+  background: #FF741F;
   color: white;
-  border-color: #764ba2;
+  border-color: #FF741F;
 }
 
 .assignment-grid {
