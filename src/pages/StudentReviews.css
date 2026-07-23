@@ -54,7 +54,7 @@
 .sort-btn, .filter-btn {
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   background: #FF741F;
   color: white;
   cursor: pointer;
