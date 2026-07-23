@@ -9,9 +9,15 @@ const Midterm = () => {
   const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const filteredData = selectedCategory === 'all'
-    ? allMidtermData
-    : allMidtermData.filter(course => course.category === selectedCategory);
+  const papers = allMidtermData.map(item => ({
+    ...item
+  })).sort((a, b) => a.code.localeCompare(b.code));
+
+  const categories = midtermCategories;
+
+  const filteredPapers = selectedCategory === 'all'
+    ? papers
+    : papers.filter(paper => paper.category === selectedCategory);
 
   return (
     <div className={`papers-page ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -42,21 +48,21 @@ const Midterm = () => {
         </div>
 
         <div className="papers-grid">
-          {filteredData.sort((a, b) => a.code.localeCompare(b.code)).map(course => (
-            <div key={course.code} className="paper-card">
+          {filteredPapers.map((paper, index) => (
+            <div key={`${paper.code}-${index}`} className="paper-card">
               <div className="card-header">
-                <div className="card-icon">{course.image}</div>
-                <h3>{course.code}</h3>
+                <div className="card-icon">{paper.image}</div>
+                <h3>{paper.code}</h3>
               </div>
 
               <div className="card-body">
-                <h4>{course.title}</h4>
+                <h4>{paper.title}</h4>
               </div>
 
               <div className="card-footer">
-                {course.links && course.links.length > 0 ? (
+                {paper.links && paper.links.length > 0 ? (
                   <div className="download-buttons">
-                    {course.links.map((link, index) => (
+                    {paper.links.map((link, index) => (
                       link && (
                         <a
                           key={index}
@@ -80,7 +86,7 @@ const Midterm = () => {
           ))}
         </div>
 
-        {filteredData.length === 0 && (
+        {filteredPapers.length === 0 && (
           <div className="no-results">
             <p>No papers found in this category.</p>
           </div>
