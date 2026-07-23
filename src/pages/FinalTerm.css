@@ -113,9 +113,9 @@
 
 .filter-btn {
   padding: 12px 16px;
-  border: 2px solid #4a9cbf;
-  background: transparent;
-  color: #4a9cbf;
+  border: 2px solid #FF741F;
+  background: #FF741F;
+  color: white;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
@@ -124,16 +124,16 @@
 }
 
 .filter-btn:hover {
-  background: rgba(74, 156, 191, 0.1);
+  background: #ff8c42;
   transform: translateY(-2px);
-  border-color: #5ab3d8;
+  border-color: #ff8c42;
 }
 
 .filter-btn.active {
-  background: #4a9cbf;
+  background: #FF741F;
   color: white;
-  border-color: #4a9cbf;
-  box-shadow: 0 6px 20px rgba(74, 156, 191, 0.4);
+  border-color: #FF741F;
+  box-shadow: 0 6px 20px rgba(255, 116, 31, 0.4);
 }
 
 /* Papers Grid */

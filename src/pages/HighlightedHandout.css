@@ -58,25 +58,27 @@
 }
 
 .filter-btn {
-  background: #f0f0f0;
-  border: 2px solid transparent;
+  background: #FF741F;
+  border: 2px solid #FF741F;
   padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
   font-size: 14px;
+  color: white;
 }
 
 .filter-btn:hover {
-  border-color: #ffd700;
-  color: #ffd700;
+  border-color: #ff8c42;
+  background: #ff8c42;
+  color: white;
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #333;
-  border-color: #ffd700;
+  background: #FF741F;
+  color: white;
+  border-color: #FF741F;
 }
 
 .handouts-grid {
