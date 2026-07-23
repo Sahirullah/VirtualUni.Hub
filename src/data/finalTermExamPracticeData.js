@@ -235,9 +235,19 @@ export const finalTermExamPracticeData = [
   { "question": "Left-recursion can be eliminated by _______ the grammar.", "options": ["Factoring", "Rewriting", "Analyzing", "Compiling"], "correct": 1 }
 ]},
   // Mathematics Courses
+//math100
+    {
+    id: 6,
+    code: 'MTH101',
+    title: 'Calculus and Analytical Geometry',
+    category: 'mth',
+    image: '📐',
+    questions: generateCourseQuestions('Calculus and Analytical Geometry', 'MTH101'),
+  },
+  //math101
   {
     id: 6,
-    code: 'MTH100',
+    code: 'MTH101',
     title: 'Calculus and Analytical Geometry',
     category: 'mth',
     image: '📐',
@@ -369,14 +379,7 @@ export const finalTermExamPracticeData = [
   { "question": "The value of ∫[1 to 2] dx = ________.", "options": ["0", "2", "1", "3"], "correct": 2 }
 ]},
 
-  {
-    id: 6,
-    code: 'MTH101',
-    title: 'Calculus and Analytical Geometry',
-    category: 'mth',
-    image: '📐',
-    questions: generateCourseQuestions('Calculus and Analytical Geometry', 'MTH101'),
-  },
+// math 201
   {
     id: 7,
     code: 'MTH201',
