@@ -46,6 +46,8 @@ export const midtermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Introduction to Programming', 'CS201'),
   },
+
+  //cs202
   {
     id: 2,
     code: 'CS202',
