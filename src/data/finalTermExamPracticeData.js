@@ -238,6 +238,7 @@ export const finalTermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Data Structures', 'CS301'),
   },
+
   {
     id: 4,
     code: 'CS401',
@@ -326,6 +327,8 @@ export const finalTermExamPracticeData = [
   { "question": "Which of the following are not in 3 types of layers?", "options": ["server layer"], "correct": 0 },
   { "question": "To read that object back, ObjectInputStream and its method ____ will be used.", "options": ["readObject()"], "correct": 0 }
 ]},
+
+//601
 
 //CS606
   {
