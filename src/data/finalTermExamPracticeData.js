@@ -327,7 +327,7 @@ export const finalTermExamPracticeData = [
   { "question": "To read that object back, ObjectInputStream and its method ____ will be used.", "options": ["readObject()"], "correct": 0 }
 ]},
 
-// CS606
+//CS606
   {
     id: 5,
     code: 'CS606',
