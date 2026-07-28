@@ -36,7 +36,7 @@ const Reviews = () => {
       company: 'Virtual University',
       avatar: user4,
       rating: 5,
-      review: 'As an Islamic Studies student, Virtual University hub provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
+      review: 'As an Islamic student, Virtual University hub provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
       theme: 'Islamic Studies Notes',
       date: '1 week ago'
     }
