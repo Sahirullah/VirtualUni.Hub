@@ -663,7 +663,7 @@ export const finalTermExamPracticeData = [
   {"question": "a3:34:45:11:92:F1 is a link layer address.", "options": ["Unicast OR Data Both are correct", "Broadcast", "Multicast", "Multiplexer"], "correct": 0}
 ]},
 
-//cs604
+//CS604
   {
     id: 1,
     code: 'CS604',
