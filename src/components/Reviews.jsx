@@ -9,9 +9,9 @@ const Reviews = () => {
   const reviews = [
     {
       id: 2,
-      name: 'Fatima Khan',
+      name: 'Waqas Ahmad',
       role: 'Mathematics Student',
-      company: 'Allama Iqbal University',
+      company: 'Virtual University',
       avatar: user2,
       rating: 5,
       review: 'The mathematics solved papers are absolutely amazing. Clear solutions and step-by-step explanations. Perfect for exam preparation!',
@@ -20,7 +20,7 @@ const Reviews = () => {
     },
     {
       id: 3,
-      name: 'Ali Raza',
+      name: 'Fatima Khan',
       role: 'Physics Student',
       company: 'Virtual University',
       avatar: user3,
@@ -31,9 +31,9 @@ const Reviews = () => {
     },
     {
       id: 4,
-      name: 'Ayesha Malik',
+      name: 'Malik',
       role: 'Islamic Studies Student',
-      company: 'Allama Iqbal University',
+      company: 'Virtual University',
       avatar: user4,
       rating: 5,
       review: 'As an Islamic Studies student, Virtual University hub provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
