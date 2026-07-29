@@ -305,7 +305,7 @@ export const finalTermExamPracticeData = [
   {"question": "An algorithm is:", "options": ["A programming language", "A computer program", "A step-by-step procedure to solve a problem", "A database table"], "correct": 2}
 ]},
  
-//cs201
+//CS201
   {
     id: 2,
     code: 'CS201',
