@@ -30,6 +30,7 @@ const generateCourseQuestions = (courseName, courseCode) => {
 // Final Term Exam Practice Data
 export const finalTermExamPracticeData = [
   // Computer Science Courses
+  //CS101
   {
     id: 1,
     code: 'CS101',
@@ -506,7 +507,7 @@ export const finalTermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Data Structures', 'CS301'),
   },
-
+//CS401
   {
     id: 4,
     code: 'CS401',
@@ -516,7 +517,7 @@ export const finalTermExamPracticeData = [
     questions: generateCourseQuestions('Algorithm Design', 'CS401'),
   },
 
-//506
+//CS506
   {
     id: 5,
     code: 'CS506',
