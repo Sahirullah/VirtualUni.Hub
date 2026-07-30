@@ -597,7 +597,7 @@ export const finalTermExamPracticeData = [
   { "question": "To read that object back, ObjectInputStream and its method ____ will be used.", "options": ["readObject()"], "correct": 0 }
 ]},
 
-//601
+//CS601
   {
     id: 3,
     code: 'CS601',
@@ -1500,6 +1500,7 @@ export const finalTermExamPracticeData = [
     image: '📊',
     questions: generateCourseQuestions('Statistics and Probability', 'STA301'),
   },
+
   {
     id: 18,
     code: 'ECO101',
