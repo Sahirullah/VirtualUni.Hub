@@ -6,6 +6,7 @@ import Reviews from '../components/Reviews';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import logoImage from '../assets/logo (3).png';
+import aboutImage from '../assets/About.jpeg';
 import '../pages/About.css';
 
 const Home = () => {
@@ -35,7 +36,9 @@ const Home = () => {
                  Our platform acts as a bridge between academic excellence and accessibility, offering handouts, assignments, past papers, and study notes from top universities worldwide. Whether you are preparing for exams, researching, or expanding your knowledge, <b>Virtual Uni Hub</b> ensures you have reliable and up-to-date resources at your fingertips.
                 </p>
               </div>
-
+              <div className="mission-image">
+                <img src={aboutImage} alt="About Virtual Uni Hub" className="mission-image-img" />
+              </div>
             </div>
           </div>
         </section>
