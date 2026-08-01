@@ -138,8 +138,8 @@
 }
 
 .mission-image-img {
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
