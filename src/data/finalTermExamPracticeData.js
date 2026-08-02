@@ -1267,6 +1267,7 @@ export const finalTermExamPracticeData = [
   },
 
   // English Courses
+  //Eng101
   {
     id: 9,
     code: 'ENG101',
@@ -1275,6 +1276,7 @@ export const finalTermExamPracticeData = [
     image: '📝',
     questions: generateCourseQuestions('English Composition', 'ENG101'),
   },
+
   //Eng201
   {
     id: 10,
@@ -1483,6 +1485,8 @@ export const finalTermExamPracticeData = [
     image: '💼',
     questions: generateCourseQuestions('Introduction to Business', 'BUS101'),
   },
+
+  //Bus301
   {
     id: 16,
     code: 'BUS301',
