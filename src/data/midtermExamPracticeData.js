@@ -48,6 +48,7 @@ export const midtermExamPracticeData = [
     image: '💻',
     questions: generateCourseQuestions('Introduction to Computing', 'CS101'),
   },
+  //Cs201
   {
     id: 2,
     code: 'CS201',
