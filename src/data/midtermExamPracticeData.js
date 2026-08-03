@@ -106,6 +106,7 @@ export const midtermExamPracticeData = [
   },
 
   // Mathematics Courses
+  //math101
   {
     id: 4,
     code: 'MTH101',
