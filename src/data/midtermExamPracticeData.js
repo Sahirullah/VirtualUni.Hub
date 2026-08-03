@@ -115,6 +115,7 @@ export const midtermExamPracticeData = [
     image: '📐',
     questions: generateCourseQuestions('Calculus and Analytical Geometry', 'MTH101'),
   },
+  //math201
   {
     id: 5,
     code: 'MTH201',
