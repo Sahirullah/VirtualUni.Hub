@@ -148,6 +148,7 @@ export const midtermExamPracticeData = [
   },
 
   // Chemistry Courses
+  //CHE101
   {
     id: 8,
     code: 'CHE101',
