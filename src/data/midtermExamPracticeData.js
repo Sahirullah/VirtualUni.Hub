@@ -159,6 +159,7 @@ export const midtermExamPracticeData = [
   },
 
   // Business Courses
+  //BUS101
   {
     id: 9,
     code: 'BUS101',
