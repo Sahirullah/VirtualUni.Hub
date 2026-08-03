@@ -137,6 +137,7 @@ export const midtermExamPracticeData = [
   },
 
   // Physics Courses
+  //PHY101
   {
     id: 7,
     code: 'PHY101',
