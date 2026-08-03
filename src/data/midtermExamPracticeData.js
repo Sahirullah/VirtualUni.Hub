@@ -30,6 +30,16 @@ const generateCourseQuestions = (courseName, courseCode) => {
 // Midterm Exam Practice Data
 export const midtermExamPracticeData = [
   // Computer Science Courses
+    //CS001
+  {
+    id: 1,
+    code: 'CS001',
+    title: 'Introduction to Computing',
+    category: 'cs',
+    image: '💻',
+    questions: generateCourseQuestions('Introduction to Computing', 'CS101'),
+  },
+  //CS101
   {
     id: 1,
     code: 'CS101',
