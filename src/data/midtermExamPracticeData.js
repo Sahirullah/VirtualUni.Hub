@@ -170,6 +170,7 @@ export const midtermExamPracticeData = [
   },
 
   // Statistics Courses
+  //STA101
   {
     id: 10,
     code: 'STA301',
