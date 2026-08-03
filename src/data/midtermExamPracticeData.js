@@ -126,6 +126,7 @@ export const midtermExamPracticeData = [
   },
 
   // English Courses
+  //ENG101
   {
     id: 6,
     code: 'ENG101',
